@@ -11,6 +11,8 @@
     "react-scripts": "0.9.5"
   },
   "scripts": {
+    "build-css": "node-sass src/styles -o public/",
+    "watch-css": "npm run build-css && node-sass src/styles -o public/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
