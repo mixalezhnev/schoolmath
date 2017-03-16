@@ -1,5 +1,50 @@
-@import 'form.css'; 
+.fr {
+  display: flex; }
 
-* {
-	box-sizing: border-box;
-}
+.fc {
+  margin: 5px; }
+
+.fc-1 {
+  flex: 1 1 auto; }
+
+.fc-2 {
+  flex: 2 2 auto; }
+
+.fc-3 {
+  flex: 3 3 auto; }
+
+.fc-4 {
+  flex: 4 4 auto; }
+
+.fc-5 {
+  flex: 5 5 auto; }
+
+.fc-6 {
+  flex: 6 6 auto; }
+
+.fc-7 {
+  flex: 7 7 auto; }
+
+.fc-8 {
+  flex: 8 8 auto; }
+
+.fc-9 {
+  flex: 9 9 auto; }
+
+.fc-10 {
+  flex: 10 10 auto; }
+
+.fc-11 {
+  flex: 11 11 auto; }
+
+.fc-12 {
+  flex: 12 12 auto; }
+
+@media only screen and (max-width: 550px) {
+  .fr {
+    flex-direction: column; } }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
