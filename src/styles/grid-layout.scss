@@ -1,0 +1,19 @@
+.fr {
+  display: flex;
+}
+
+.fc {
+  margin: 5px;
+}
+
+@for $i from 1 through 12 {
+  .fc-#{$i} {
+    flex: $i $i auto;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .fr {
+    flex-direction: column;
+  }
+}

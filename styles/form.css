@@ -1,0 +1,48 @@
+.form {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	max-width: 400px;
+	margin: 300px auto;
+	padding: .75em .75em 0 .75em;
+}
+
+.form__group {
+	margin: 0 0 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.form__group_right {
+	justify-content: flex-end;
+}
+
+.form_bordered {
+	border: 1px solid #000;
+}
+
+.form__label {
+	line-height: 2;
+}
+
+.form__input {
+	padding: .5em;
+	width: 83%;
+	font-size: 0.75em;
+}
+
+.form__input_wide {
+	padding: .5em;
+	width: 100%;
+	font-size: 0.75em;
+}
+
+.form__group_wide {
+	display: block;
+}
+
+.form__submit {
+	border: 1px solid #000;
+	background: #fff;
+	padding: .5em 1em;
+}
