@@ -8,13 +8,15 @@
   },
   "devDependencies": {
     "node-sass": "^4.5.0",
+    "npm-run-all": "^4.0.2",
     "react-scripts": "0.9.5"
   },
   "scripts": {
     "build-css": "node-sass src/styles -o public/",
     "watch-css": "npm run build-css && node-sass src/styles -o public/ --watch --recursive",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
