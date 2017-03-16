@@ -3,6 +3,15 @@
 # dependencies
 /node_modules
 
+# css styles
+public/*.css
+
+#other
+app.dpd
+resources
+data
+.dpd
+
 # testing
 /coverage
 
@@ -15,4 +24,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
