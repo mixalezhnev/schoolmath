@@ -4,7 +4,7 @@
 /node_modules
 
 # css styles
-public/**/*.css
+public/*.css
 
 # testing
 /coverage
