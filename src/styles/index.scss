@@ -88,13 +88,13 @@ body {
 
 .mission__text:before {
 	position: absolute;
-	left: -50px;
+	left: -55px;
 	top: 25px;
 	content: '';
 	display: block;
 	height: 50px;
 	width: 50px;
-	background: black;
+	border-radius: 50%;
 	background: url("img/startup.svg") no-repeat;
 }
 
@@ -133,11 +133,13 @@ body {
 }
 
 .lessons {
-	justify-content: space-around;	
+	justify-content: flex-end;	
 }
 
 .lessons__list {
-	line-height: 2;
+	line-height: 2rem;
+	flex: 1 1 50%;
+	text-align: right;
 }
 
 .lessons__list a {
@@ -145,32 +147,18 @@ body {
 	text-decoration: none;
 }
 
-@media only screen and (max-width: 1200px) {
+/*	вынести в миксин 	*/
+
+/*@media only screen and (max-width: 400px) {
+	
+}
+*/
+@media only screen and (min-width: 401px) and (max-width: 500px) {
 	.content {
-		max-width: 960px;
+		width: 360px;
 	}
 }
 
-@media only screen and (max-width: 850px) {
-	.content {
-		max-width: 750px;
-	}
-}
-
-@media only screen and (max-width: 768px) {
-	.content {
-		max-width: 660px;
-	}
-
-	.section {
-		flex-direction: column;
-	}
-
-	.lessons {
-		justify-content: center;
-	}
-
-	.lessons__list:first-child {
-		margin-right: 50px;
-	}
+@media only screen and (min-width: 961px) {
+	/* styles here */	
 }
