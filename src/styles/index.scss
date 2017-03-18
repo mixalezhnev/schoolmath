@@ -1,16 +1,19 @@
-@import "layout";
-@import "reset";
-
-$max-width: 1200px;
-$border-color: rgba(225,225,225,.5);
+$primary-font-size: 14px;
+$larger-font-size: 16px;
+$largest-font-size: 18px;
+$primary-color: deepskyblue;
 $block-height: 50px;
+$border-color: rgba(225,225,225,.5);
 
 body {
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
 	box-sizing: border-box;
+	font-size: $primary-font-size;
 }
+
+/*	header	*/
 
 .header {
 	background: #044389;
@@ -28,8 +31,8 @@ body {
 }
 
 .logo {
-	height: 60px;
-	width: 60px;
+	height: 30px;
+	width: 30px;
 }
 
 .logo__image {
@@ -37,14 +40,11 @@ body {
 	height: 100%;
 }
 
-.logo__text {
-	margin-left: -9999px;
+.content {
+	padding: 0 15px;
 }
 
-.content {
-	max-width: $max-width;
-	margin: 0 auto;
-}
+/* navigation	*/
 
 .navigation {
 	height: $block-height;
@@ -60,7 +60,7 @@ body {
 	font-weight: bold;
 	display: block;
 	line-height: $block-height;
-	padding: 0 .5em;
+	padding: 0 8px;
 }
 
 .navigation__link_active {
@@ -72,6 +72,8 @@ body {
 	border-bottom: 4px solid grey;
 }
 
+/*	mission	*/
+
 .mission {
 	height: 2 * $block-height;
 	border-bottom: 1px solid $border-color;
@@ -81,84 +83,121 @@ body {
 .mission__text {
 	display: inline-block;
 	text-decoration: none;
+	font-size: $largest-font-size;
 	color: black;
 	line-height: 2 * $block-height;
 	position: relative;
+	font-weight: bold;
 }
 
 .mission__text:before {
 	position: absolute;
-	left: -55px;
 	top: 25px;
+	left: -50px;
 	content: '';
 	display: block;
 	height: 50px;
 	width: 50px;
-	border-radius: 50%;
 	background: url("img/startup.svg") no-repeat;
 }
 
-.subject {
-	flex-basis: 600 / 1200 * 100%;
-}
-
-.subject__title a {
-	color: #35A9E8;
-	text-decoration: none;
-}
-
-.subject__title a:hover {
-	text-decoration: underline;
-}
-
-.subject__title {
-	margin: 0 0 10px 0;
-}
+/*	main	*/
 
 .section {
-	padding: 30px 0;
+	padding: 10px 0;
 }
 
-.section:not(:last-child) {
-	border-bottom: 1px solid $border-color;
-} 
+.subject__group {
+	display: flex;
+	align-items: center;
+}
 
 .subject__icon {
-	width: 48px;
-	height: 48px;
+	width: 40px;
+	height: 40px;
 	background: url("img/percentage.png") no-repeat;
 	background-size: cover;
 	border-radius: 50%;
 	margin-right: 10px;
 }
 
-.lessons {
-	justify-content: flex-end;	
+.subject__title {
+	text-decoration: none;
+	font-size: $larger-font-size;
+	color: $primary-color;	
 }
 
-.lessons__list {
-	line-height: 2rem;
-	flex: 1 1 50%;
-	text-align: right;
+.subject__title a:hover {
+	text-decoration: underline;
 }
 
-.lessons__list a {
-	color: #7F7F7F;
+.subject__container {
+	margin: 0 0 0 50px;
+}
+
+.subject__desc {
+	margin: 0;
+	line-height: 22px;
+}
+
+.subject__lessons {
+	display: none;
+	margin-top: 10px;
+	column-count: 2;
+}
+
+.subject__lesson {
+	margin-bottom: 10px;
+}
+
+.subject__lesson a {
+	color: grey;
 	text-decoration: none;
 }
 
-/*	вынести в миксин 	*/
+/*	Media	 */
 
-/*@media only screen and (max-width: 400px) {
-	
-}
-*/
-@media only screen and (min-width: 401px) and (max-width: 500px) {
-	.content {
-		width: 360px;
+@media only screen and (min-width: 768px) {
+	.section {
+		width: 768px;
+		margin: 0 auto;
+	}
+		
+	.logo {
+		height: 40px;
+		width: 40px;
+	}
+
+	.subject__lessons {
+		display: block;
 	}
 }
 
-@media only screen and (min-width: 961px) {
-	/* styles here */	
+@media only screen and (min-width: 1200px) {
+	.section {
+		width: 100%;
+	}
+		
+	.logo {
+		height: 50px;
+		width: 50px;
+	}
+
+	.subject__container {
+		display: flex;
+	}
+
+	.subject__desc{
+		width: 60%;
+	}
+
+	.subject__lessons {
+		margin-top: 0;
+		width: 40%;
+	}
+
+	.content {
+		width: 1200px;
+		margin: 0 auto;
+	}
 }
