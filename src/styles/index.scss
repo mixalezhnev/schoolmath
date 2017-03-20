@@ -124,10 +124,10 @@ body {
 .subject__title {
 	text-decoration: none;
 	font-size: $larger-font-size;
-	color: $primary-color;	
+	color: $primary-color;
 }
 
-.subject__title a:hover {
+.subject__title:hover {
 	text-decoration: underline;
 }
 
@@ -148,6 +148,11 @@ body {
 
 .subject__lesson {
 	margin-bottom: 10px;
+	transition: .3s ease-in-out margin;
+}
+
+.subject__lesson:hover {
+	margin-left: 5px;
 }
 
 .subject__lesson a {
@@ -199,5 +204,6 @@ body {
 	.content {
 		width: 1200px;
 		margin: 0 auto;
+		padding: 0;
 	}
 }
