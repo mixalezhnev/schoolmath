@@ -24,11 +24,11 @@ export default class App extends Component {
       throw new Error('bad fetch');
     });
   }
-  
+
   render() {
 		return (
       <div className="App">
-        <Header /> 
+        <Header />
         <Navigation />
         <Mission />
         <Section data={this.state.articles} />
