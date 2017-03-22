@@ -1,0 +1,8 @@
+:root {
+  --primary-font-size: 14px;
+  --larger-font-size: 16px;
+  --block-height: 50px;
+  --largest-font-size: 18px;
+  --primary-color: deepskyblue;
+  --border-color: rgba(225,225,225,.5);
+}
