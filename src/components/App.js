@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import Header from './Header';
 import Navigation from './Navigation';
 import Mission from './Mission';
@@ -16,23 +16,21 @@ export default class App extends Component {
     fetch('http://localhost:2403/articles')
     .then(response => response.json())
     .then(articles => {
-      this.setState({
-        articles
-      });
+      this.setState({articles});
     })
     .catch(err => {
-      throw new Error('bad fetch');
+      console.log(`error in fetch: ${err.message}`);
     });
   }
 
   render() {
-		return (
+    return (
       <div className="App">
-        <Header />
-        <Navigation />
-        <Mission />
-        <Section data={this.state.articles} />
+        <Header/>
+        <Navigation/>
+        <Mission/>
+        <Section data={this.state.articles}/>
       </div>
     );
-	}
+  }
 }

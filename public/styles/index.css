@@ -1,205 +1,202 @@
 @import 'variables.css';
-
 body {
   margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-	box-sizing: border-box;
-	font-size: var(--primary-font-size);
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  font-size: var(--primary-font-size);
 }
+
 
 /*	header	*/
 
 .header {
-	background: #044389;
+  background: #044389;
 }
 
 .sign-in__link {
-	color: #91DC5A;
+  color: #91DC5A;
 }
 
 .header__group {
   display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 20px 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
 }
 
 .logo {
-	height: 30px;
-	width: 30px;
+  height: 30px;
+  width: 30px;
 }
 
 .logo__image {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .content {
-	padding: 0 15px;
+  padding: 0 15px;
 }
+
 
 /* navigation	*/
 
 .navigation {
-	height: var(--block-height);
-	display: flex;
-	justify-content: center;
-	border-bottom: 1px solid var(--border-color);
+  height: var(--block-height);
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .navigation__link {
-	cursor: pointer;
-	text-decoration: none;
-	color: black;
-	font-weight: bold;
-	display: block;
-	line-height: var(--block-height);
-	padding: 0 8px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  display: block;
+  line-height: var(--block-height);
+  padding: 0 8px;
 }
 
 .navigation__link_active {
-	color: var(--primary-color);
-	border-bottom: 4px solid var(--primary-color);
+  color: var(--primary-color);
+  border-bottom: 4px solid var(--primary-color);
 }
 
 .navigation__link:not(.navigation__link_active):hover {
-	border-bottom: 4px solid grey;
+  border-bottom: 4px solid grey;
 }
+
 
 /*	mission	*/
 
 .mission {
-	height: calc(2 * var(--block-height));
-	border-bottom: 1px solid var(--border-color);
-	text-align: center;
+  height: calc(2 * var(--block-height));
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
 }
 
 .mission__text {
-	display: inline-block;
-	text-decoration: none;
-	font-size: var(--largest-font-size);
-	color: black;
-	line-height: calc(2 * var(--block-height));
-	position: relative;
-	font-weight: bold;
+  display: inline-block;
+  text-decoration: none;
+  font-size: var(--largest-font-size);
+  color: black;
+  line-height: calc(2 * var(--block-height));
+  position: relative;
+  font-weight: bold;
 }
 
 .mission__text:before {
-	position: absolute;
-	top: 25px;
-	left: -50px;
-	content: '';
-	display: block;
-	height: 50px;
-	width: 50px;
-	background: url("../img/startup.svg") no-repeat;
+  position: absolute;
+  top: 25px;
+  left: -50px;
+  content: '';
+  display: block;
+  height: 50px;
+  width: 50px;
+  background: url("../img/startup.svg") no-repeat;
 }
+
 
 /*	main	*/
 
 .section {
-	padding: 10px 0;
+  padding: 10px 0;
 }
 
 .subject__group {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .subject__icon {
-	width: 40px;
-	height: 40px;
-	background: url("../img/percentage.png") no-repeat;
-	background-size: cover;
-	border-radius: 50%;
-	margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  background: url("../img/percentage.png") no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .subject__title {
-	text-decoration: none;
-	font-size: var(--larger-font-size);
-	color: var(--primary-color);
+  text-decoration: none;
+  font-size: var(--larger-font-size);
+  color: var(--primary-color);
 }
 
 .subject__title:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .subject__container {
-	margin: 0 0 0 50px;
+  margin: 0 0 0 50px;
 }
 
 .subject__desc {
-	margin: 0;
-	line-height: 22px;
+  margin: 0;
+  line-height: 22px;
 }
 
 .subject__lessons {
-	display: none;
-	margin-top: 10px;
-	column-count: 2;
+  display: none;
+  margin-top: 10px;
+  column-count: 2;
 }
 
 .subject__lesson {
-	margin-bottom: 10px;
-	transition: .3s ease-in-out margin;
+  margin-bottom: 10px;
+  transition: .3s ease-in-out margin;
 }
 
 .subject__lesson:hover {
-	margin-left: 5px;
+  margin-left: 5px;
 }
 
 .subject__lesson a {
-	color: grey;
-	text-decoration: none;
+  color: grey;
+  text-decoration: none;
 }
+
 
 /*	Media	 */
 
 @media only screen and (min-width: 768px) {
-	.section {
-		width: 768px;
-		margin: 0 auto;
-	}
-
-	.logo {
-		height: 40px;
-		width: 40px;
-	}
-
-	.subject__lessons {
-		display: block;
-	}
+  .section {
+    width: 768px;
+    margin: 0 auto;
+  }
+  .logo {
+    height: 40px;
+    width: 40px;
+  }
+  .subject__lessons {
+    display: block;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
-	.section {
-		width: 100%;
-	}
-
-	.logo {
-		height: 50px;
-		width: 50px;
-	}
-
-	.subject__container {
-		display: flex;
-	}
-
-	.subject__desc{
-		width: 50%;
-	}
-
-	.subject__lessons {
-		margin-top: 0;
-		width: 45%;
-		margin-left: 5%;
-	}
-
-	.content {
-		width: 1200px;
-		margin: 0 auto;
-		padding: 0;
-	}
+  .section {
+    width: 100%;
+  }
+  .logo {
+    height: 50px;
+    width: 50px;
+  }
+  .subject__container {
+    display: flex;
+  }
+  .subject__desc {
+    width: 50%;
+  }
+  .subject__lessons {
+    margin-top: 0;
+    width: 45%;
+    margin-left: 5%;
+  }
+  .content {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+  }
 }
