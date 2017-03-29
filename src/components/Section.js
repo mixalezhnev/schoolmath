@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
-import Article from './Article';
+import Navigation from './Navigation';
 
 export default class Section extends Component {
   render() {
-    let articles = this.props.data.map((article) => <Article data={article} key={article.id}/>);
-
     return (
-      <div className="main content">
-        {articles}
+      <div>
+        <Navigation pages={this.props.route.pages}/>
+        <div>{this.props.children}</div>
       </div>
     );
   }
