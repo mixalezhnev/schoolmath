@@ -1,0 +1,39 @@
+.modal {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(38,34,35,.72);
+}
+
+
+.modal__body {
+  background: white;
+  max-width: 960px;
+  margin: auto;
+  padding: 10px;
+  height: 80vh;
+  margin-top: 10vh;
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal__btn_close {
+  height: calc(35 / 16 * 1rem);
+  width: calc(35 / 16 * 1rem);
+  cursor: pointer;
+  position: relative;
+  background: url("../img/close.svg") no-repeat;
+}
+
+/*.modal__content {
+
+}*/
+
+.modal_hidden {
+  display: none;
+}
