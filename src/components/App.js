@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Modal from './Modal';
 import Header from './Header';
 
 import Section from './Section';
@@ -14,6 +15,8 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isModalOpened: false,
+      currentLesson: '',
       pages: [
         {
           title: 'Обзор курса',
@@ -29,6 +32,21 @@ export default class App extends Component {
     };
   }
 
+  toggleModal = () => {
+    this.setState({
+      isModalOpened: !this.state.isModalOpened
+    });
+  }
+
+  componentDidMount() {
+    window.ee.addListener('openLesson', (title) => {
+      this.setState({
+        currentLesson: title
+      });
+      this.toggleModal();
+    });
+  }
+
   render() {
     return (
       <div className='App'>
@@ -41,6 +59,7 @@ export default class App extends Component {
             <Route path='*' component={NotFound}/>
           </Route>
         </Router>
+        <Modal isOpened={this.state.isModalOpened} close={this.toggleModal} lesson={this.state.currentLesson}/>
       </div>
     );
   }
