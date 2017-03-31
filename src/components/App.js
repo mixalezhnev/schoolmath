@@ -11,21 +11,24 @@ import {Router, Route, browserHistory}
   from 'react-router';
 
 export default class App extends Component {
-  state = {
-    isModalOpened: false,
-    currentLesson: '',
-    pages: [
-      {
-        title: 'Обзор курса',
-        path: '/',
-      }, {
-        title: 'Практикум',
-        path: '/practice',
-      }, {
-        title: 'Прогресс',
-        path: '/progress',
-      }
-    ]
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpened: false,
+      currentLesson: '',
+      pages: [
+        {
+          title: 'Обзор курса',
+          path: '/',
+        }, {
+          title: 'Практикум',
+          path: '/practice',
+        }, {
+          title: 'Прогресс',
+          path: '/progress',
+        }
+      ]
+    };
   }
 
   toggleModal = () => {
