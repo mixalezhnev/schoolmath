@@ -30,9 +30,9 @@
   background: url("../img/close.svg") no-repeat;
 }
 
-/*.modal__content {
-
-}*/
+.modal__content {
+  line-height: 1.5rem;
+}
 
 .modal_hidden {
   display: none;
