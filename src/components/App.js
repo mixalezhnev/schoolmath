@@ -59,7 +59,7 @@ export default class App extends Component {
             <Route path='*' component={NotFound}/>
           </Route>
         </Router>
-        <Modal isOpened={this.state.isModalOpened} close={this.toggleModal} lesson={this.state.currentLesson}/>
+        <Modal isOpened={this.state.isModalOpened} toggle={this.toggleModal} lesson={this.state.currentLesson}/>
       </div>
     );
   }
