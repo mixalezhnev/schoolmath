@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Modal from './Modal';
 import Header from './Header';
-
 import Section from './Section';
 import Overview from './Overview';
 import Practice from './Practice';
