@@ -1,23 +1,15 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import Article from './Article';
 import Mission from './Mission';
-import fetchData from '../api/fetchData';
 
-export default class Overview extends Component {
-  /**
-   * ES7 syntax (without constructor)
-   */
-  state = {
-    articles: []
-  }
+const mapStateToProps = (state) => {
+  return {data: state.articles.data}
+}
 
-  componentDidMount() {
-    fetchData.call(this, 'http://localhost:2403/articles');
-  }
-
+class Overview extends Component {
   render() {
-    let articles = this.state.articles.map((article) =>
-      <Article data={article} key={article.id}/>);
+    const articles = this.props.data.map((article) => <Article data={article} key={article.id}/>);
 
     return (
       <div>
@@ -27,3 +19,5 @@ export default class Overview extends Component {
     );
   }
 }
+
+export default connect(mapStateToProps)(Overview);
