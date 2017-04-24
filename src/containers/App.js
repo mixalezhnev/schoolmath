@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import Modal from './Modal';
-import Header from './Header';
+// import Modal from './Modal';
+import Header from '../components/Header';
 
-import Section from './Section';
-import Overview from './Overview';
-import Practice from './Practice';
-import Progress from './Progress';
-import NotFound from './404';
+import Section from '../components/Section';
+import Overview from '../components/Overview';
+import Practice from '../components/Practice';
+import Progress from '../components/Progress';
+import NotFound from '../components/404';
 
 import {connect} from 'react-redux';
 import getArticles from '../store/actions/articles';
@@ -15,8 +15,8 @@ import {Router, Route, browserHistory} from 'react-router';
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    getData: (url) => {
-      dispatch(getArticles(url))
+    getData: () => {
+      dispatch(getArticles())
     }
   }
 }
@@ -31,8 +31,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isModalOpened: false,
-      currentLesson: '',
+      // isModalOpened: false,
+      // currentLesson: '',
       pages: [
         {
           title: 'Обзор курса',
@@ -48,19 +48,19 @@ class App extends Component {
     };
   }
 
-  toggleModal = () => {
-    this.setState({
-      isModalOpened: !this.state.isModalOpened
-    });
-  }
+  // toggleModal = () => {
+  //   this.setState({
+  //     isModalOpened: !this.state.isModalOpened
+  //   });
+  // }
 
   componentDidMount() {
-    this.props.getData('http://localhost:2403/articles/');
+    this.props.getData();
 
-    window.ee.addListener('openLesson', (title) => {
-      this.setState({currentLesson: title});
-      this.toggleModal();
-    });
+    // window.ee.addListener('openLesson', (title) => {
+    //   this.setState({currentLesson: title});
+    //   this.toggleModal();
+    // });
   }
 
   render() {
@@ -75,7 +75,7 @@ class App extends Component {
             <Route path='*' component={NotFound}/>
           </Route>
         </Router>
-        <Modal isOpened={this.state.isModalOpened} close={this.toggleModal} lesson={this.state.currentLesson} articles={this.props.data}/>
+        {/*<Modal isOpened={this.state.isModalOpened} close={this.toggleModal} lesson={this.state.currentLesson} articles={this.props.data}/>*/}
       </div>
     );
   }
