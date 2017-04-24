@@ -4,7 +4,7 @@ import {
   GET_ARTICLES_FAILURE
 } from '../constants';
 
-export const getArticles = (url) => {
+export default url => {
   return (dispatch) => {
     dispatch({
       type: GET_ARTICLES_REQUEST

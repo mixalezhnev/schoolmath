@@ -9,7 +9,7 @@ import Progress from './Progress';
 import NotFound from './404';
 
 import {connect} from 'react-redux';
-import {getArticles} from '../store/actions/articles';
+import getArticles from '../store/actions/articles';
 
 import {Router, Route, browserHistory} from 'react-router';
 
@@ -22,7 +22,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 const mapStateToProps = (state) => {
-  return {data: state.articles.data}
+  return {
+    data: state.articles.data
+  }
 }
 
 class App extends Component {
