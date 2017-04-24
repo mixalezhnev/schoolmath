@@ -41,7 +41,7 @@ export default class Modal extends Component {
         <div className='modal__body'>
           <div className='modal__header'>
             <h2>{content[0] && content[0].title}</h2>
-            <Button className='modal__btn_close' onClick={this.props.toggle}/>
+            <Button className='modal__btn_close' onClick={this.props.close}/>
           </div>
           <div className='modal__content'>
             <p>{content[0] && content[0].content}</p>

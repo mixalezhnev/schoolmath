@@ -1,16 +1,33 @@
 import React, {Component} from 'react';
 import Modal from './Modal';
 import Header from './Header';
+
 import Section from './Section';
 import Overview from './Overview';
 import Practice from './Practice';
 import Progress from './Progress';
 import NotFound from './404';
 
-import {Router, Route, browserHistory}
-  from 'react-router';
+import {connect} from 'react-redux';
+import getArticles from '../store/actions/articles';
 
-export default class App extends Component {
+import {Router, Route, browserHistory} from 'react-router';
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    getData: (url) => {
+      dispatch(getArticles(url))
+    }
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    data: state.articles.data
+  }
+}
+
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,15 +36,15 @@ export default class App extends Component {
       pages: [
         {
           title: 'Обзор курса',
-          path: '/',
+          path: '/'
         }, {
           title: 'Практикум',
-          path: '/practice',
+          path: '/practice'
         }, {
           title: 'Прогресс',
-          path: '/progress',
-        }
-      ]
+          path: '/progress'
+        },
+      ],
     };
   }
 
@@ -38,10 +55,10 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    this.props.getData('http://localhost:2403/articles/');
+
     window.ee.addListener('openLesson', (title) => {
-      this.setState({
-        currentLesson: title
-      });
+      this.setState({currentLesson: title});
       this.toggleModal();
     });
   }
@@ -58,8 +75,10 @@ export default class App extends Component {
             <Route path='*' component={NotFound}/>
           </Route>
         </Router>
-        <Modal isOpened={this.state.isModalOpened} toggle={this.toggleModal} lesson={this.state.currentLesson}/>
+        <Modal isOpened={this.state.isModalOpened} close={this.toggleModal} lesson={this.state.currentLesson} articles={this.props.data}/>
       </div>
     );
   }
 }
+
+export default connect(null, mapDispatchToProps)(App);
