@@ -21,11 +21,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    data: state.articles.data
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     data: state.articles.data
+//   }
+// }
 
 class App extends Component {
   constructor(props) {

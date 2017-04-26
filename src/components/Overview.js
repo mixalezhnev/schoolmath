@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import Article from './Article';
-import Mission from '../containers/Mission';
+import OverviewProgressContainer from '../containers/OverviewProgressContainer';
 
 const mapStateToProps = (state) => {
   return {data: state.articles.data}
@@ -14,7 +14,7 @@ const Overview = ({data}) => {
 
   return (
     <div>
-      <Mission/>
+      <OverviewProgressContainer/>
       <div className='main content'>{articles}</div>
     </div>
   );

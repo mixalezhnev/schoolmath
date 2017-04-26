@@ -92,7 +92,7 @@ body {
 
 /*	mission	*/
 
-.mission {
+/*.mission {
   height: calc(2 * var(--block-height));
   border-bottom: 1px solid var(--border-color);
   text-align: center;
@@ -117,6 +117,64 @@ body {
   height: 50px;
   width: 50px;
   background: url("../img/startup.svg") no-repeat;
+}*/
+
+/* progress */
+.overview__block {
+  border-bottom: 1px solid var(--border-color);
+  background: #f2f2f2;
+  padding: 10px 0;
+}
+
+.overview__progress {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.progress-block {
+  display: flex;
+}
+
+.progress-graph {
+  display: flex;
+  position: relative;
+}
+
+.progress-block__percent {
+  text-align: center;
+  align-self: center;
+  position: absolute;
+  font-size: 30px;
+  color: var(--primary-color);
+  left: 32px;
+}
+
+.percent-sign {
+  font-size: 14px;
+}
+
+.svg-backdrop, .svg-progress {
+  fill: none;
+}
+
+.svg-backdrop {
+  stroke: #333;
+  stroke-width: 3%;
+}
+
+.svg-progress {
+  stroke-width: 4%;
+  stroke: var(--primary-color);
+  transition: stroke-dashoffset 2s ease-out;
+}
+
+.svg-icon {
+  width: 100px;
+  height: 100px;
+  transform: rotate(-90deg);
 }
 
 /*	main	*/

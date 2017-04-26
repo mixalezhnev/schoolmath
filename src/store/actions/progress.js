@@ -14,10 +14,10 @@ export default () => {
 
     getProgress()
       .then(response => response.json())
-      .then(articles => {
+      .then(progress => {
         dispatch({
           type: GET_PROGRESS_SUCCESS,
-          payload: articles
+          payload: progress[0]
         })
       })
       .catch(err => {
