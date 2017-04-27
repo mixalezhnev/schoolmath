@@ -1,0 +1,280 @@
+@import 'modal.css';
+@import 'variables.css';
+@import 'search-form.css';
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family:
+    var(--primary-font-family),
+    var(--secondary-font-family),
+    sans-serif;
+  box-sizing: border-box;
+  font-size: var(--primary-font-size);
+}
+
+/*	header	*/
+
+.header {
+  background: #044389;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header__input {
+  margin-right: 10px;
+  border-radius: 20px;
+  color: gray;
+}
+
+.sign-in__link {
+  color: #91DC5A;
+  text-decoration: none;
+}
+
+.header__group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  height: 30px;
+  width: 30px;
+}
+
+.logo__image {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  padding: 0 15px;
+}
+
+/* navigation	*/
+
+.navigation {
+  height: var(--block-height);
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navigation__link {
+  cursor: pointer;
+  text-decoration: none;
+  color: gray;
+  font-weight: bold;
+  display: block;
+  line-height: var(--block-height);
+  padding: 0 8px;
+}
+
+.navigation__link_active {
+  color: var(--primary-color);
+  border-bottom: 4px solid var(--primary-color);
+}
+
+.navigation__link:not(.navigation__link_active):hover {
+  border-bottom: 4px solid grey;
+}
+
+
+/*	mission	*/
+
+/*.mission {
+  height: calc(2 * var(--block-height));
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.mission__text {
+  display: inline-block;
+  text-decoration: none;
+  font-size: var(--largest-font-size);
+  color: black;
+  line-height: calc(2 * var(--block-height));
+  position: relative;
+  font-weight: bold;
+}
+
+.mission__text:before {
+  position: absolute;
+  top: 25px;
+  left: -50px;
+  content: '';
+  display: block;
+  height: 50px;
+  width: 50px;
+  background: url("../img/startup.svg") no-repeat;
+}*/
+
+/* progress */
+.overview__block {
+  border-bottom: 1px solid var(--border-color);
+  background: #f2f2f2;
+  padding: 10px 0;
+}
+
+.overview__progress {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.progress-block {
+  display: flex;
+}
+
+.progress-graph {
+  display: flex;
+  position: relative;
+}
+
+.progress-block__percent {
+  text-align: center;
+  align-self: center;
+  position: absolute;
+  font-size: 30px;
+  color: var(--primary-color);
+  left: 32px;
+}
+
+.percent-sign {
+  font-size: 14px;
+}
+
+.svg-backdrop, .svg-progress {
+  fill: none;
+}
+
+.svg-backdrop {
+  stroke: #333;
+  stroke-width: 3%;
+}
+
+.svg-progress {
+  stroke-width: 4%;
+  stroke: var(--primary-color);
+  transition: stroke-dashoffset 2s ease-out;
+}
+
+.svg-icon {
+  width: 100px;
+  height: 100px;
+  transform: rotate(-90deg);
+}
+
+/*	main	*/
+
+.section {
+  padding: 10px 0;
+}
+
+.subject__group {
+  display: flex;
+  align-items: center;
+}
+
+.subject__icon {
+  width: 40px;
+  height: 40px;
+  background: url("../img/percentage.png") no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.subject__title {
+  text-decoration: none;
+  font-size: var(--larger-font-size);
+  color: var(--primary-color);
+}
+
+.subject__title:hover {
+  text-decoration: underline;
+}
+
+.subject__container {
+  margin: 0 0 0 50px;
+}
+
+.subject__desc {
+  margin: 0;
+  line-height: 22px;
+}
+
+.subject__lessons {
+  display: none;
+  margin-top: 10px;
+  column-count: 2;
+}
+
+.subject__lesson {
+  margin-bottom: 10px;
+  transition: .3s ease-in-out margin;
+}
+
+.subject__lesson:hover {
+  margin-left: 5px;
+}
+
+.subject__lesson a {
+  color: grey;
+  text-decoration: none;
+}
+
+
+/*	Media	 */
+
+@media only screen and (min-width: 768px) {
+  .section {
+    width: 768px;
+    margin: 0 auto;
+  }
+  .logo {
+    height: 40px;
+    width: 40px;
+  }
+  .subject__lessons {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .section {
+    width: 100%;
+  }
+  .logo {
+    height: 50px;
+    width: 50px;
+  }
+  .subject__container {
+    display: flex;
+  }
+  .subject__desc {
+    width: 50%;
+  }
+  .subject__lessons {
+    margin-top: 0;
+    width: 45%;
+    margin-left: 5%;
+  }
+  .content {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}

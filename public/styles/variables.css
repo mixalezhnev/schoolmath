@@ -1,0 +1,10 @@
+:root {
+  --primary-font-family: 'Proxima Nova';
+  --secondary-font-family: 'Helvetica';
+  --primary-font-size: 16px;
+  --larger-font-size: 18px;
+  --largest-font-size: 20px;
+  --block-height: 50px;
+  --primary-color: deepskyblue;
+  --border-color: rgba(225, 225, 225, .5);
+}
