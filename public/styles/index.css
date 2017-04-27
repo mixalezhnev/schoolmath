@@ -89,36 +89,6 @@ body {
   border-bottom: 4px solid grey;
 }
 
-
-/*	mission	*/
-
-/*.mission {
-  height: calc(2 * var(--block-height));
-  border-bottom: 1px solid var(--border-color);
-  text-align: center;
-}
-
-.mission__text {
-  display: inline-block;
-  text-decoration: none;
-  font-size: var(--largest-font-size);
-  color: black;
-  line-height: calc(2 * var(--block-height));
-  position: relative;
-  font-weight: bold;
-}
-
-.mission__text:before {
-  position: absolute;
-  top: 25px;
-  left: -50px;
-  content: '';
-  display: block;
-  height: 50px;
-  width: 50px;
-  background: url("../img/startup.svg") no-repeat;
-}*/
-
 /* progress */
 .overview__block {
   border-bottom: 1px solid var(--border-color);
@@ -130,12 +100,16 @@ body {
   background: white;
   width: 100%;
   max-width: 600px;
+  display: flex;
+  align-items: center;
+  position: relative;
   margin: 0 auto;
   padding: 10px;
 }
 
 .progress-block {
   display: flex;
+    margin-right: 20px;
 }
 
 .progress-graph {
@@ -161,12 +135,12 @@ body {
 }
 
 .svg-backdrop {
-  stroke: #333;
+  stroke: gray;
   stroke-width: 3%;
 }
 
 .svg-progress {
-  stroke-width: 4%;
+  stroke-width: 5%;
   stroke: var(--primary-color);
   transition: stroke-dashoffset 2s ease-out;
 }
@@ -175,6 +149,38 @@ body {
   width: 100px;
   height: 100px;
   transform: rotate(-90deg);
+}
+
+.startup {
+  width: 100px;
+  height: 100px;
+  background: url("../img/startup.svg") no-repeat;
+  margin-right: 20px;
+}
+
+.mission-about {
+  display: flex;
+}
+
+.mission-about__text {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.mission-about__next {
+  margin-top: 5px;
+}
+
+/* button */
+.start-button {
+  color: white;
+  background: var(--primary-color);
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border: none;
+  align-self: flex-start;
+  position: absolute;
+  right: 10px;
 }
 
 /*	main	*/
