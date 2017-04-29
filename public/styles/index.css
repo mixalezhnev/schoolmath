@@ -181,6 +181,7 @@ body {
   align-self: flex-start;
   position: absolute;
   right: 10px;
+  cursor: pointer;
 }
 
 /*	main	*/

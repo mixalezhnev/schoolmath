@@ -19,16 +19,16 @@ const progress = (state = initialState, action) => {
         error: null,
         isFetching: true
       }
-    case GET_PROGRESS_SUCCESS: {
-      const {total, next} = action.payload;
-
-      return {
-        ...state,
-        total,
-        next,
-        isFetching: false
-      };
-    }
+    case GET_PROGRESS_SUCCESS:
+      {
+        const {total, next} = action.payload;
+        return {
+          ...state,
+          total,
+          next,
+          isFetching: false
+        };
+      }
     case GET_PROGRESS_FAILURE:
       return {
         ...state,

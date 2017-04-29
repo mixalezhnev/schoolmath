@@ -1,7 +1,8 @@
-import {GET_ARTICLES_REQUEST,
-        GET_ARTICLES_SUCCESS,
-        GET_ARTICLES_FAILURE
-        } from '../constants';
+import {
+  GET_ARTICLES_REQUEST,
+  GET_ARTICLES_SUCCESS,
+  GET_ARTICLES_FAILURE
+ } from '../constants';
 
 const initialState = {
   data: [],
@@ -9,13 +10,14 @@ const initialState = {
   error: null
 };
 
-const articles = (state=initialState, action) => {
+const articles = (state = initialState, action) => {
   switch (action.type) {
     case GET_ARTICLES_REQUEST:
       return {
         ...state,
         error: null,
-        isFetching: true}
+        isFetching: true
+      }
     case GET_ARTICLES_SUCCESS:
       return {
         ...state,

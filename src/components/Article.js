@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
+import Link from 'react-router';
 
 export default class Article extends Component {
 
   onLinkClick = (e) => {
     e.preventDefault();
-    window.ee.emit('openLesson', e.target.textContent);
+    window
+      .ee
+      .emit('openLesson', e.target.textContent);
   }
 
   render() {
@@ -22,11 +25,14 @@ export default class Article extends Component {
           <div className='subject__lessons'>
             {lessons.map((lesson, index) => (
               <div className='subject__lesson' key={index}>
+
                 <a href='' onClick={this.onLinkClick}>{lesson.title}</a>
+
               </div>
             ))}
           </div>
         </div>
-      </div>);
+      </div>
+    );
   }
 }

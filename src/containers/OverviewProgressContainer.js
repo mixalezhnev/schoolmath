@@ -25,7 +25,9 @@ class OverviewProgressContainer extends Component {
 
   render() {
     return (
-      <OverviewProgress {...this.props.progress}/>
+      <div>
+        <OverviewProgress {...this.props.progress}/>
+      </div>
     );
   }
 }

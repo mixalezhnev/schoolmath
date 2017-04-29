@@ -5,7 +5,7 @@
 .search-form__input {
   box-sizing: border-box;
   height: 40px;
-  width: 200px;
+  width: 400px;
   padding: 10px 40px 10px 10px;
   font-size: var(--primary-font-size);
   outline: none;
@@ -13,9 +13,9 @@
   transition: width .5s ease-in-out;
 }
 
-.search-form__input:hover {
+/*.search-form__input:hover {
   width: 400px;
-}
+}*/
 
 .search-form__search-icon {
   width: 20px;
