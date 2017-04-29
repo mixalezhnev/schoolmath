@@ -1,30 +1,12 @@
 import {
-  GET_PROGRESS_REQUEST,
-  GET_PROGRESS_SUCCESS,
-  GET_PROGRESS_FAILURE
+	SET_PROGRESS,
+	SET_NEXT_EXERCISE
 } from '../constants';
 
-import getProgress from '../../api/getProgress';
 
-export default () => {
-  return (dispatch) => {
-    dispatch({
-      type: GET_PROGRESS_REQUEST
-    });
-
-    getProgress()
-      .then(response => response.json())
-      .then(progress => {
-        dispatch({
-          type: GET_PROGRESS_SUCCESS,
-          payload: progress[0]
-        })
-      })
-      .catch(err => {
-        dispatch({
-          type: GET_PROGRESS_FAILURE,
-          payload: err.message
-        });
-      })
-  }
+export default (total) => {
+	return {
+		type: SET_PROGRESS,
+		payload: total
+	}
 }
