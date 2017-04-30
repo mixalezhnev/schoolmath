@@ -1,0 +1,6 @@
+.startup {
+  width: 100px;
+  height: 100px;
+  background: url(./startup.svg) no-repeat;
+  margin-right: 20px;
+}

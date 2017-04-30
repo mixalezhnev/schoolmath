@@ -1,6 +1,7 @@
 import React from 'react';
+import styles from './ProgressIcon.css';
 
-import { getCircleProgress } from '../ulits';
+import { getCircleProgress } from '../../ulits';
 
 const ProgressIcon = ({ total }) => {
 	const radius = 47;

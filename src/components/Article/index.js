@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Link from 'react-router';
 
+import styles from './Article.css'
+
 export default class Article extends Component {
 	onLinkClick = (e) => {
 		e.preventDefault();
@@ -10,7 +12,7 @@ export default class Article extends Component {
 		const { icon, title, description, lessons } = this.props.data;
 
 		return (
-			<div className='section subject'>
+			<div className='subject'>
 
 				<div className='subject__group'>
 					<img src={icon} alt={title} className="subject__icon" />

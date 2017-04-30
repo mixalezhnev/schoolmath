@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
 
+import Header from '../components/Header';
 import Section from '../components/Section';
 import Overview from './Overview';
-import Practice from '../components/Practice';
-import Progress from '../components/Progress';
+import Practice from './Practice';
+import Progress from './Progress';
 import Footer from '../components/Footer';
 import NotFound from '../components/404';
 

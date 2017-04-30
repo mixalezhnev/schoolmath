@@ -1,6 +1,8 @@
 import React from 'react';
-import Auth from '../containers/Auth';
-import SearchBox from './SearchBox';
+import Auth from '../../containers/Auth';
+import SearchBox from '../SearchBox';
+
+import styles from './Header.css';
 
 const Header = () => (
   <div className='header'>
@@ -11,7 +13,7 @@ const Header = () => (
         </div>
         <div className='header__right'>
           <SearchBox/>
-          <Auth isLogged={false}/>
+          <Auth/>
         </div>
       </div>
     </div>

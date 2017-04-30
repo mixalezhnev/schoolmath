@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from './Input.js'
+import Input from '../Input';
 
 class SearchBox extends React.Component {
   handleChange = (e) => {

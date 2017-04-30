@@ -1,8 +1,8 @@
 import React from 'react';
-import ProgressIcon from './ProgressIcon';
-import StartUp from './StartUp';
-import Button from './Button';
-import {Link} from 'react-router'
+import ProgressIcon from '../ProgressIcon';
+import StartUp from '../StartUp';
+import Button from '../Button';
+import {Link} from 'react-router';
 
 const OverviewProgress = ({total, next}) => {
   const isStart = total == 0;
@@ -24,7 +24,7 @@ const OverviewProgress = ({total, next}) => {
             </div>
           </div>
           <Link to='/practice'>
-            <Button inner='Старт' className='start-button'/>
+            <Button inner='Старт'/>
           </Link>
         </div>
       </div>

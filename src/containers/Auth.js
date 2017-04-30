@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Auth = ({isLogged}) => {
+const Auth = ({isLogged = false}) => {
   return isLogged
     ? (<div className='profile'>
           <a href='#' className='profile__link'>Профиль</a>

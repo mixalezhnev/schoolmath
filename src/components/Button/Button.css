@@ -1,0 +1,14 @@
+.button {
+	color: white;
+	background: deepskyblue;
+	cursor: pointer;
+	border: none;
+	padding: 5px 10px;
+}
+
+.start-button {
+  text-transform: uppercase;
+  align-self: flex-start;
+  position: absolute;
+  right: 10px;
+}
