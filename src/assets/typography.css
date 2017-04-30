@@ -1,0 +1,23 @@
+.primary-font-family {
+	font-family: 'Proxima Nova';
+}
+
+.secondary-font-family {
+	font-family: 'Helvetica';
+}
+
+.serif {
+	font-family: serif;
+}
+
+.primary-font-size {
+	font-size: 16px;
+}
+
+.secondary-font-size {
+	font-size: 18px;
+}
+
+.largest-font-size {
+	font-size: 20px;
+}

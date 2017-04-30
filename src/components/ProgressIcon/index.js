@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ProgressIcon.css';
+import './ProgressIcon.css';
 
 import { getCircleProgress } from '../../ulits';
 

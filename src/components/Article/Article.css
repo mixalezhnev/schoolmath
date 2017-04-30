@@ -3,48 +3,55 @@
 	border-bottom: 1px solid rgba(225, 225, 225, .5);
 }
 
-.subject__group {
+.group {
   display: flex;
   align-items: center;
 }
 
-.subject__title {
+.title {
   text-decoration: none;
   font-size: var(--larger-font-size);
   color: var(--primary-color);
+	&:hover {
+  	text-decoration: underline;
+	}
 }
 
-.subject__title:hover {
-  text-decoration: underline;
-}
+.title
 
-.subject__container {
+.container {
   margin: 0 0 0 50px;
 }
 
-.subject__desc {
+.description {
   margin: 0;
   line-height: 22px;
 }
 
-.subject__lessons {
+.lessons {
   display: none;
   margin-top: 10px;
   column-count: 2;
 }
 
-.subject__lesson {
+.lesson {
   margin-bottom: 10px;
   transition: .3s ease-in-out margin;
+	&:hover {
+		margin-left: 3px;
+	}
 }
 
-.subject__lesson:hover {
-  margin-left: 5px;
-}
-
-.subject__lesson a {
+.lesson-link {
+	composes: link from '../../assets/general.css';
   color: grey;
-  text-decoration: none;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -52,7 +59,7 @@
     width: 768px;
     margin: 0 auto;
   }
-	.subject__lessons {
+	.lessons {
 		display: block;
   }
 }
@@ -61,13 +68,13 @@
   .subject {
     width: 100%;
   }
-	.subject__container {
+	.container {
     display: flex;
   }
-  .subject__desc {
+  .description {
     width: 50%;
   }
-  .subject__lessons {
+  .lessons {
     margin-top: 0;
     width: 45%;
     margin-left: 5%;

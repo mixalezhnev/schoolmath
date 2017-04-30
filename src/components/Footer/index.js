@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Footer.css';
 
 const Footer = () => (
-	<footer className='footer'>
+	<footer className={styles.footer}>
 	</footer>
 )
 

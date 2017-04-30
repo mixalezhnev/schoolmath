@@ -5,6 +5,7 @@
 public/*.css
 
 #other
+/config
 
 # testing
 /coverage

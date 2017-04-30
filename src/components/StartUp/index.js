@@ -3,7 +3,7 @@ import styles from './StartUp.css';
 import startup from './startup.svg';
 
 const StartUp = () => (
-  <div className='startup'></div>
+	<div className={styles.startup}></div>
 );
 
 export default StartUp;

@@ -12,20 +12,18 @@ export default class Article extends Component {
 		const { icon, title, description, lessons } = this.props.data;
 
 		return (
-			<div className='subject'>
+			<div className={styles.subject}>
 
-				<div className='subject__group'>
-					<img src={icon} alt={title} className="subject__icon" />
-					<a href='' className='subject__title'>{title}</a>
+				<div className={styles.group}>
+					<img src={icon} alt={title} className={styles.icon} />
+					<a href='' className={styles.title}>{title}</a>
 				</div>
-				<div className='subject__container'>
-					<p className='subject__desc'>{description}</p>
-					<div className='subject__lessons'>
+				<div className={styles.container}>
+					<p className={styles.description}>{description}</p>
+					<div className={styles.lessons}>
 						{lessons.map((lesson, index) => (
-							<div className='subject__lesson' key={index}>
-
-								<a href='' onClick={this.onLinkClick}>{lesson.title}</a>
-
+							<div className={styles.lesson} key={index}>
+								<a href='' onClick={this.onLinkClick} className={styles.lessonLink}>{lesson.title}</a>
 							</div>
 						))}
 					</div>
