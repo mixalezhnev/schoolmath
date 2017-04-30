@@ -57,6 +57,10 @@ body {
   height: 100%;
 }
 
+.main {
+	min-height: 100vh;
+}
+
 .content {
   padding: 0 15px;
 }
@@ -187,7 +191,8 @@ body {
 /*	main	*/
 
 .section {
-  padding: 10px 0;
+  padding: 15px 0;
+	border-bottom: 1px solid rgba(225, 225, 225, .5);
 }
 
 .subject__group {

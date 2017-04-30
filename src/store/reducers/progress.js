@@ -11,12 +11,10 @@ const initialState = {
 const progress = (state = initialState, action) => {
 	switch (action.type) {
 		case SET_PROGRESS:
-			{
-				return {
-					...state,
-					total: action.payload
-				};
-			}
+			return {
+				...state,
+				total: action.payload
+			};
 		case SET_NEXT_EXERCISE:
 			return {
 				...state,
