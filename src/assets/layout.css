@@ -5,3 +5,10 @@
 .default-block-height {
 	height: 50px;
 }
+
+.main-container {
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+	min-height: 100vh;
+}

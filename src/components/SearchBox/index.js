@@ -1,5 +1,7 @@
 import React from 'react';
 import Input from '../Input';
+import styles from './SearchBox.css';
+import search from './search.svg';
 
 class SearchBox extends React.Component {
 	// handleChange = (e) => {
@@ -8,12 +10,12 @@ class SearchBox extends React.Component {
 
 	render() {
 		return (
-			<div className="search-form">
-				<Input
-					type='search'
-					className='search-form__input header__input'
+			<div className={styles.searchForm}>
+				<input
+					type='text'
+					className={styles.searchInput}
 					placeholder={'Поиск'} />
-				<div className='search-form__search-icon'></div>
+				<div className={styles.searchIcon}></div>
 			</div>
 		);
 	}

@@ -9,22 +9,22 @@
 }
 
 .title {
+	composes: secondary-font-size from '../../assets/typography.css';
+	composes: primary-font-family from '../../assets/typography.css';
+  composes: primary-color from '../../assets/colors.css';
   text-decoration: none;
-  font-size: var(--larger-font-size);
-  color: var(--primary-color);
 	&:hover {
   	text-decoration: underline;
 	}
 }
-
-.title
 
 .container {
   margin: 0 0 0 50px;
 }
 
 .description {
-  margin: 0;
+	composes: primary-font-size from '../../assets/typography.css';
+	composes: primary-font-family from '../../assets/typography.css';
   line-height: 22px;
 }
 
@@ -35,6 +35,8 @@
 }
 
 .lesson {
+	composes: primary-font-size from '../../assets/typography.css';
+	composes: primary-font-family from '../../assets/typography.css';
   margin-bottom: 10px;
   transition: .3s ease-in-out margin;
 	&:hover {
@@ -43,8 +45,8 @@
 }
 
 .lesson-link {
-	composes: link from '../../assets/general.css';
-  color: grey;
+	composes: links from '../../assets/general.css';
+  color: gray;
 }
 
 .icon {

@@ -3,5 +3,5 @@
 }
 
 .border-color {
-	rgba(225, 225, 225, .5);
+	color: color(lightgray a(50%));
 }

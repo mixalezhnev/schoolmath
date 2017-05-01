@@ -1,9 +1,25 @@
+@font-face {
+	font-family: 'Open Sans';
+	src: url(./fonts/osr.ttf)
+}
+
+@font-face {
+	font-family: 'Open Sans Light';
+	src: url(./fonts/osl.ttf)
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	src: url(./fonts/ptr.ttf)
+}
+
 .primary-font-family {
-	font-family: 'Proxima Nova';
+	/*font-family: 'Open Sans Light';*/
+	font-family: 'PT Sans';
 }
 
 .secondary-font-family {
-	font-family: 'Helvetica';
+	font-family: 'Open Sans';
 }
 
 .serif {
@@ -20,4 +36,8 @@
 
 .largest-font-size {
 	font-size: 20px;
+}
+
+.smallest-font-size {
+	font-size: 14px;
 }

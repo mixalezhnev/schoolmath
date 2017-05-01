@@ -1,4 +1,6 @@
 .button {
+	composes: smallest-font-size from '../../assets/typography.css';
+	composes: primary-font-family from '../../assets/typography.css';
 	color: white;
 	background: deepskyblue;
 	cursor: pointer;

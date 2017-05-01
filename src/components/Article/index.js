@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'react-router';
+import { Link } from 'react-router';
 
 import styles from './Article.css'
 
@@ -16,7 +16,7 @@ export default class Article extends Component {
 
 				<div className={styles.group}>
 					<img src={icon} alt={title} className={styles.icon} />
-					<a href='' className={styles.title}>{title}</a>
+					<Link to='/subject' className={styles.title}>{title}</Link>
 				</div>
 				<div className={styles.container}>
 					<p className={styles.description}>{description}</p>

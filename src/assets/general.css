@@ -2,3 +2,10 @@
 	text-decoration: none;
 	color: black;
 }
+
+.inputs {
+	height: 40px;
+  width: 200px;
+  outline: none;
+  border: none;
+}

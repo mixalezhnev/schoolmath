@@ -1,0 +1,22 @@
+.link {
+	composes: primary-font-family from '../../assets/typography.css';
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+	opacity: .85;
+	font-weight: bold;
+  display: block;
+  line-height: 50px;
+  padding: 0 8px;
+}
+
+.active-link {
+	color: deepskyblue;
+	opacity: 1;
+	font-weight: bold;
+  border-bottom: 4px solid deepskyblue;
+}
+
+.link:not(.active-link):hover {
+	border-bottom: 4px solid gray; 
+}

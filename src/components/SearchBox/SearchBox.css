@@ -1,0 +1,21 @@
+.search-form {
+  position: relative;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  background: url('./search.svg');
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.search-input {
+	composes: primary-font-size from '../../assets/typography.css';
+	composes: inputs from '../../assets/general.css';
+	width: 400px;
+	padding: 10px 40px 10px 10px;
+	margin-right: 10px;
+  border-radius: 20px;
+}
