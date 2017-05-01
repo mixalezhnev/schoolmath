@@ -1,22 +1,32 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-import './index.css';
-import App from './containers/App';
+import {render} from 'react-dom';
 
 import { Provider } from 'react-redux';
-
 import configureStore from './store/configureStore';
 
-import Emitter from 'wolfy87-eventemitter';
+import {Router, Route, browserHistory, Redirect} from 'react-router';
+import {syncHistoryWithStore} from 'react-router-redux';
 
-window.ee = new Emitter();
+import App from './containers/App';
+import Overview from './containers/Overview';
+import Practice from './containers/Practice';
+import Progress from './containers/Progress';
+
+import './index.css';
 
 const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
 
-ReactDOM.render(
+render(
 	<Provider store={store}>
-		<App />
+    <Router history={history}>
+      <Redirect from ='/' to='home'/>
+
+      <Route path='/' component={App}>
+        <Route path='practice' component={Practice}/>
+        <Route path='progress' component={Progress}/>
+      </Route>
+    </Router>
 	</Provider>,
 	document.getElementById('root')
 );
