@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import './index.css';
 import App from './containers/App';
-import {Provider} from 'react-redux';
+
+import { Provider } from 'react-redux';
+
 import configureStore from './store/configureStore';
-import '../public/styles/index.css';
+
 import Emitter from 'wolfy87-eventemitter';
 
 window.ee = new Emitter();
@@ -11,8 +15,8 @@ window.ee = new Emitter();
 const store = configureStore();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
 );

@@ -1,6 +1,6 @@
 'use strict';
 
-var autoprefixer = require('autoprefixer');
+var postCSSConfig = require('./postcss.config');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
