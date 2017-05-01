@@ -1,6 +1,5 @@
 .container {
   display: flex;
-	margin-right: 20px;
 }
 
 .graph {
@@ -12,6 +11,12 @@
   width: 100px;
   height: 100px;
   transform: rotate(-90deg);
+}
+
+.small-icon {
+	width: 46px;
+	height: 46px;
+	transform: rotate(-90deg);
 }
 
 .backdrop, .progress {
