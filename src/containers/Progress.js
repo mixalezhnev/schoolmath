@@ -1,9 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
+import Progress from '../components/Progress';
 
-export default class Progress extends Component {
-  render() {
-    return (
-      <div className="main content">Progress Section</div>
-    );
-  }
-}
+import {connect} from 'react-redux';
+
+export default connect()(Progress);
