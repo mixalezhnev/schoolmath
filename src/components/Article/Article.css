@@ -21,7 +21,7 @@
 }
 
 .container {
-  margin: 0 0 0 56px;
+  margin: 0 0 0 65px;
 }
 
 .description {
@@ -41,9 +41,9 @@
 	composes: primary-font-size from '../../assets/typography.css';
 	composes: primary-font-family from '../../assets/typography.css';
   margin-bottom: 10px;
-  transition: .3s ease-in-out margin;
+  transition: text-indent .3s ease-in-out;
 	&:hover {
-		margin-left: 3px;
+		text-indent: 3px;
 	}
 }
 

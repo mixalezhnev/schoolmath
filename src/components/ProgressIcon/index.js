@@ -12,11 +12,10 @@ const ProgressIcon = ({ total, children, radius = 47 }) => {
 		<div className={styles.container}>
 			<div className={styles.graph}>
 				<svg className={isForSmallIcon ? styles.smallIcon : styles.icon}>
-					<circle className={styles.backdrop} cx='50%' cy='50%' r={radius}></circle>
-					<circle className={styles.progress} cx='50%' cy='50%' r={radius}
+					<circle className={isForSmallIcon ? styles.smallBackdrop : styles.backdrop} cx='50%' cy='50%' r={radius}></circle>
+					<circle className={isForSmallIcon ? styles.smallProgress : styles.progress} cx='50%' cy='50%' r={radius}
 						strokeDasharray={circumference}
-						strokeDashoffset={dasharray}
-						strokeLinecap='round'>
+						strokeDashoffset={dasharray}>
 					</circle>
 				</svg>
 				{!isForSmallIcon &&
