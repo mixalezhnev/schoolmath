@@ -4,7 +4,7 @@ import {
 } from '../constants';
 
 
-export default (total = 0) => {
+export default (total = 5) => {
 	return {
 		type: SET_PROGRESS,
 		payload: total

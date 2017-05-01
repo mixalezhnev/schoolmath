@@ -11,12 +11,13 @@ import NotFound from '../components/404';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { listenToArticles } from '../store/actions/articles';
+import getProgress from '../store/actions/progress';
 
 import { Router, Route, browserHistory } from 'react-router';
 
 const mapDispatchToProps = (dispatch) => ({
 	getData: bindActionCreators(listenToArticles, dispatch),
-	// getProgress: bindActionCreators(getProgress, dispatch)
+	getProgress: bindActionCreators(getProgress, dispatch)
 })
 
 class App extends Component {
@@ -40,7 +41,7 @@ class App extends Component {
 
 	componentDidMount() {
 		this.props.getData();
-		// this.props.getProgress();
+		this.props.getProgress(10);
 	}
 
 	render() {
