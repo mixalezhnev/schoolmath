@@ -26,7 +26,7 @@ export default class Article extends Component {
 				<div className={styles.heading}>
 					<ProgressIcon total={progress} radius={this.radius} />
 					<SubjIcon url={icon} />
-					<Link to={`/${title}`} className={styles.title}>{title}</Link>
+					<Link to={`/subject/${title}`} className={styles.title}>{title}</Link>
 				</div>
 				<div className={styles.container}>
 					<p className={styles.description}>{description}</p>

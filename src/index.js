@@ -34,12 +34,12 @@ render(
       <Route path='/' component={App}>
         <Route path='home' component={Home}>
           <IndexRoute component={Overview}/>
-          <Route path='practice' component={Practice}/>
-          <Route path='progress' component={Progress}/>
+          <Route path='/practice' component={Practice}/>
+          <Route path='/progress' component={Progress}/>
         </Route>
-        <Route path=':subject' component={Subject}>
-          <IndexRoute component={SubjectOverview}></IndexRoute>
-          <Route path=':subject/practice' component={SubjectPractice}></Route>
+        <Route path='/subject/:subject' component={Subject}>
+          <Route path='/overview' component={SubjectOverview}></Route>
+          <Route path='/practice' component={SubjectPractice}></Route>
         </Route>
       </Route>
     </Router>

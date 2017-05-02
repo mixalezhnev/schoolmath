@@ -6,11 +6,11 @@ import styles from './Subject.css';
 const paths = [
   {
     title: 'Обзор курса',
-    path: 'overview'
+    path: '/overview'
   },
   {
     title: 'Практикум',
-    path: 'practice'
+    path: '/practice'
   }
 ];
 
