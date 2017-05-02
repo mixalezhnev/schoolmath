@@ -14,12 +14,13 @@ import {
 import {syncHistoryWithStore} from 'react-router-redux';
 
 import App from './containers/App';
-import Section from './components/Section';
+import Home from './components/Home';
 import Overview from './containers/Overview';
 import Practice from './containers/Practice';
 import Progress from './containers/Progress';
 import Subject from './containers/Subject';
-import SubjectPractice from './containers/Subject';
+import SubjectPractice from './containers/SubjectPractice';
+import SubjectOverview from './containers/SubjectOverview';
 
 import './index.css';
 
@@ -31,13 +32,14 @@ render(
     <Router history={history}>
       <Redirect from='/' to='home'></Redirect>
       <Route path='/' component={App}>
-        <Route path='home' component={Section}>
+        <Route path='home' component={Home}>
           <IndexRoute component={Overview}/>
           <Route path='practice' component={Practice}/>
           <Route path='progress' component={Progress}/>
         </Route>
-        <Route path='(:subject)' component={Subject}>
-          <Route path='practice' component={SubjectPractice}></Route>
+        <Route path=':subject' component={Subject}>
+          <IndexRoute component={SubjectOverview}></IndexRoute>
+          <Route path=':subject/practice' component={SubjectPractice}></Route>
         </Route>
       </Route>
     </Router>

@@ -3,14 +3,18 @@ import NavLink from '../NavLink';
 
 import styles from './Navigation.css';
 
-const Navigation = () => {
-	return (
-		<div className={styles.navigation}>
-      <NavLink title='Обзор' path='home'/>
-      <NavLink title='Практикум' path='practice'/>
-      <NavLink title='Прогресс' path='progress'/>
-		</div>
-	);
-}
+const Navigation = ({pages}) => {
+  let navLinks = pages.map((item) => {
+    return <NavLink
+      title={item.title}
+      path={item.path}
+      key={item.title}/>
+    });
 
+    return (
+      <div className={styles.navigation}>
+        {navLinks}
+      </div>
+    );
+  }
 export default Navigation;

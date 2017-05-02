@@ -1,13 +1,21 @@
 import React from 'react';
-import styles from './Subject.css';
 import Navigation from '../Navigation';
 
+import styles from './Subject.css';
+
+const paths = [
+  {
+    title: 'Обзор курса',
+    path: 'overview'
+  },
+  {
+    title: 'Практикум',
+    path: 'practice'
+  }
+];
+
 const Subject = ({params, children}) => (
-  <div className={styles.container}>
-    <Navigation/>
-    <div>{params}</div>
-    <div>{children}</div>
-  </div>
+  <Navigation pages={paths}/>
 )
 
 export default Subject;
