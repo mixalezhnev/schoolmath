@@ -1,12 +1,26 @@
 import React from 'react';
-import OverviewProgressContainer from '../../containers/OverviewProgressContainer';
+import OverviewProgress from '../../containers/OverviewProgress';
 
 import styles from './Practice.css';
 
-const Practice = () => (
+const Practice = ({data}) => (
   <div>
-    <OverviewProgressContainer />
-    <div className={styles.container}>Practice Section</div>
+    <OverviewProgress />
+    <div className={styles.container}>
+      <div className={styles.contentList}
+        style={{
+          position: 'fixed'
+        }}>
+        <h3>Содержание</h3>
+        <ul style={{
+          maxWidth: '300px',
+          lineHeight: '22px'
+        }}>
+          {data.map(item => <li key={item.title}>{item.title}</li>)}
+        </ul>
+      </div>
+      <div className={styles.content}></div>
+    </div>
   </div>
 );
 

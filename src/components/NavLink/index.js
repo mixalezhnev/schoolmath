@@ -8,7 +8,10 @@ const NavItem = ({ path, title }) => {
 		<Link
 			to={path}
 			className={styles.link}
-			activeClassName={styles.activeLink}>{title}</Link>
+      onlyActiveOnIndex={true}
+			activeClassName={styles.activeLink}>
+      {title}
+    </Link>
 	);
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Article from '../../components/Article';
-import OverviewProgressContainer from '../../containers/OverviewProgressContainer';
+import OverviewProgress from '../../containers/OverviewProgress';
 
 import { connect } from 'react-redux';
 
@@ -14,7 +14,7 @@ const Overview = ({ data }) => {
 
 	return (
 		<div>
-			<OverviewProgressContainer />
+			<OverviewProgress />
 			<div className={styles.container}>{articles}</div>
 		</div>
 	);

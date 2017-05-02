@@ -4,13 +4,13 @@ import Navigation from '../Navigation';
 const paths = [
   {
     title: 'Обзор курса',
-    path: 'home',
+    path: '/overview',
   }, {
     title: 'Практикум',
-    path: 'practice',
+    path: '/practice',
   }, {
     title: 'Прогресс',
-    path: 'progress',
+    path: '/progress',
   },
 ];
 

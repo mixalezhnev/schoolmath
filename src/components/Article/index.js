@@ -13,10 +13,6 @@ export default class Article extends Component {
 		this.radius = 22;
 	}
 
-	onLinkClick = (e) => {
-		e.preventDefault();
-	}
-
 	render() {
 		const { icon, title, description, lessons, progress, url } = this.props.data;
 

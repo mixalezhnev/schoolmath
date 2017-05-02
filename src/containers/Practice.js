@@ -3,4 +3,9 @@ import Practice from '../components/Practice';
 
 import { connect } from 'react-redux';
 
-export default connect()(Practice);
+const mapStateToProps = ({ articles }) => ({
+	data: articles.data
+})
+
+
+export default connect(mapStateToProps)(Practice);
