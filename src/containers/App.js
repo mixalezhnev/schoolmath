@@ -23,20 +23,20 @@ const mapDispatchToProps = (dispatch) => ({
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			pages: [
-				{
-					title: 'Обзор курса',
-					path: '/'
-				}, {
-					title: 'Практикум',
-					path: '/practice'
-				}, {
-					title: 'Прогресс',
-					path: '/progress'
-				},
-			],
-		};
+		// this.state = {
+		// 	pages: [
+		// 		{
+		// 			title: 'Обзор курса',
+		// 			path: '/'
+		// 		}, {
+		// 			title: 'Практикум',
+		// 			path: '/practice'
+		// 		}, {
+		// 			title: 'Прогресс',
+		// 			path: '/progress'
+		// 		},
+		// 	]
+		// };
 	}
 
 	componentDidMount() {
@@ -48,14 +48,7 @@ class App extends Component {
 		return (
 			<div className='App'>
 				<Header />
-				<Router history={browserHistory}>
-					<Route component={Section} pages={this.state.pages}>
-						<Route path='/' component={Overview} />
-						<Route path='practice' component={Practice} />
-						<Route path='progress' component={Progress} />
-						<Route path='*' component={NotFound} />
-					</Route>
-				</Router>
+        {this.props.children}
 				<Footer />
 			</div>
 		);
