@@ -6,16 +6,21 @@ import styles from './Subject.css';
 const paths = [
   {
     title: 'Обзор курса',
-    path: '/overview'
+    path: ''
   },
   {
     title: 'Практикум',
-    path: '/practice'
+    path: ''
   }
 ];
 
 const Subject = ({params, children}) => (
-  <Navigation pages={paths}/>
+  <div>
+    <Navigation pages={paths}/>
+    <div className={styles.container}>
+      {children}
+    </div>
+  </div>
 )
 
 export default Subject;

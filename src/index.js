@@ -38,8 +38,8 @@ render(
           <Route path='/progress' component={Progress}/>
         </Route>
         <Route path='/subject/:subject' component={Subject}>
-          <Route path='/overview' component={SubjectOverview}></Route>
-          <Route path='/practice' component={SubjectPractice}></Route>
+          <Route path='/subject/:subject/subject-overview' component={SubjectOverview}></Route>
+          <Route path='/subject/:subject/subject-practice' component={SubjectPractice}></Route>
         </Route>
       </Route>
     </Router>

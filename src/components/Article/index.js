@@ -18,7 +18,7 @@ export default class Article extends Component {
 	}
 
 	render() {
-		const { icon, title, description, lessons, progress } = this.props.data;
+		const { icon, title, description, lessons, progress, url } = this.props.data;
 
 		return (
 			<div className={styles.subject}>
@@ -26,7 +26,7 @@ export default class Article extends Component {
 				<div className={styles.heading}>
 					<ProgressIcon total={progress} radius={this.radius} />
 					<SubjIcon url={icon} />
-					<Link to={`/subject/${title}`} className={styles.title}>{title}</Link>
+					<Link to={`/subject/${url}`} className={styles.title}>{title}</Link>
 				</div>
 				<div className={styles.container}>
 					<p className={styles.description}>{description}</p>
