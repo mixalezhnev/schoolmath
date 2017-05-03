@@ -1,5 +1,7 @@
 import React from 'react';
 import OverviewProgress from '../../containers/OverviewProgress';
+import ContentList from '../ContentList';
+import Exercise from '../Exercise';
 
 import styles from './Practice.css';
 
@@ -7,19 +9,12 @@ const Practice = ({data}) => (
   <div>
     <OverviewProgress />
     <div className={styles.container}>
-      <div className={styles.contentList}
-        style={{
-          position: 'fixed'
-        }}>
-        <h3>Содержание</h3>
-        <ul style={{
-          maxWidth: '300px',
-          lineHeight: '22px'
-        }}>
-          {data.map(item => <li key={item.title}>{item.title}</li>)}
-        </ul>
+      <ContentList data={data}/>
+      <div className={styles.content}>
+        {data.map(subject =>
+          <Exercise data={subject} key={subject.title}/>
+        )}
       </div>
-      <div className={styles.content}></div>
     </div>
   </div>
 );

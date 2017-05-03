@@ -1,0 +1,43 @@
+.content-list {
+  margin-right: 20px;
+}
+
+.list {
+  composes: list from '../../assets/general.css';
+  composes: primary-font-size from '../../assets/typography.css';
+  composes: primary-font-family from '../../assets/typography.css';
+  line-height: 25px;
+}
+
+.anchor {
+  composes: links from '../../assets/general.css';
+  display: block;
+  padding: 5px;
+  border-left: 4px solid transparent;
+  color: color(black a(60%));
+  transition: color .2s linear;
+}
+
+.anchor:hover {
+  color: color(black a(90%));
+}
+
+.active-anchor {
+  color: color(black a(95%));
+  border-color: #9BC53D;
+  cursor: alias;
+}
+
+.heading {
+  composes: secondary-font-size from '../../assets/typography.css';
+  composes: secondary-font-family from '../../assets/typography.css';
+  color: color(black a(90%));
+  text-transform: uppercase;
+  margin: 0 0 9px 10px;
+}
+
+@media only screen and (width >= 768px){
+  .content-list {
+    max-width: 300px;
+  }
+}

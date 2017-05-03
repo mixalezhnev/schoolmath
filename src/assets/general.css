@@ -1,6 +1,17 @@
 .links {
 	text-decoration: none;
 	color: black;
+  cursor: pointer;
+}
+
+.buttons {
+	composes: smallest-font-size from './typography.css';
+	composes: primary-font-family from './typography.css';
+	color: white;
+	background: deepskyblue;
+	cursor: pointer;
+	border: none;
+	padding: 5px 10px;
 }
 
 .inputs {
@@ -8,4 +19,8 @@
   width: 200px;
   outline: none;
   border: none;
+}
+
+.list {
+  list-style: none;
 }

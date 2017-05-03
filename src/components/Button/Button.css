@@ -1,17 +1,7 @@
-.button {
-	composes: smallest-font-size from '../../assets/typography.css';
-	composes: primary-font-family from '../../assets/typography.css';
-	color: white;
-	background: deepskyblue;
-	cursor: pointer;
-	border: none;
-	padding: 5px 10px;
-}
-
 .startButton {
-	composes: button;
+	composes: buttons from '../../assets/general.css';
   text-transform: uppercase;
   align-self: flex-start;
   position: absolute;
-  right: 10px;
+  right: 20px;
 }
