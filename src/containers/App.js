@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => ({
 class App extends Component {
 	componentDidMount() {
 		this.props.getData();
-		this.props.getProgress(10);
+		this.props.getProgress({completed: 0, total: 125});
 	}
 
 	render() {

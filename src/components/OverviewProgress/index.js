@@ -8,15 +8,15 @@ import styles from './OverviewProgress.css';
 
 import { Link } from 'react-router';
 
-const OverviewProgress = ({ total, next }) => {
-	const isStart = total == 0;
+const OverviewProgress = ({ total, percentage, next }) => {
+	const isStart = percentage == 0;
 
 	return (
 		<div className={styles.progressContainer}>
 			<div className={styles.progress}>
 				{isStart
 					? <StartUp />
-					: <ProgressIcon total={total} />
+					: <ProgressIcon total={percentage} />
 				}
 				<div className={styles.mission}>
 					<div>

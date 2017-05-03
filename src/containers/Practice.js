@@ -3,8 +3,9 @@ import Practice from '../components/Practice';
 
 import { connect } from 'react-redux';
 
-const mapStateToProps = ({ articles }) => ({
-	data: articles.data
+const mapStateToProps = ({ articles, progress }) => ({
+	data: articles.data,
+  progress
 })
 
 

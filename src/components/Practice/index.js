@@ -1,13 +1,13 @@
 import React from 'react';
-import OverviewProgress from '../../containers/OverviewProgress';
+import PracticeProgress from '../PracticeProgress';
 import ContentList from '../ContentList';
 import SubjExercise from '../SubjExercise';
 
 import styles from './Practice.css';
 
-const Practice = ({data}) => (
+const Practice = ({data, progress}) => (
   <div>
-    <OverviewProgress />
+    <PracticeProgress progress={progress}/>
     <div className={styles.container}>
       <ContentList data={data}/>
       <div className={styles.content}>
