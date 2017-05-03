@@ -10,14 +10,9 @@
 }
 
 .title {
-	composes: secondary-font-size from '../../assets/typography.css';
-	composes: primary-font-family from '../../assets/typography.css';
-  composes: primary-color from '../../assets/colors.css';
+  composes: titles from '../../assets/general.css';
   text-decoration: none;
-	margin-left: 10px;
-	&:hover {
-  	text-decoration: underline;
-	}
+  margin-left: 10px;
 }
 
 .container {

@@ -1,6 +1,5 @@
 .links {
 	text-decoration: none;
-	color: black;
   cursor: pointer;
 }
 
@@ -23,4 +22,14 @@
 
 .list {
   list-style: none;
+}
+
+.titles {
+  composes: links;
+  composes: secondary-font-size from './typography.css';
+	composes: primary-font-family from './typography.css';
+  composes: primary-color from './colors.css';
+	&:hover {
+  	text-decoration: underline;
+	}
 }

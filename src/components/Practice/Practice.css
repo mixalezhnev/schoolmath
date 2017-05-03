@@ -5,6 +5,10 @@
   margin-top: 30px;
 }
 
+.content {
+  flex-grow: 3;
+}
+
 
 @media only screen and (width >= 768px ) {
   .container {

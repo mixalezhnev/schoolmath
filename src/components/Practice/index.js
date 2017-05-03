@@ -1,7 +1,7 @@
 import React from 'react';
 import OverviewProgress from '../../containers/OverviewProgress';
 import ContentList from '../ContentList';
-import Exercise from '../Exercise';
+import SubjExercise from '../SubjExercise';
 
 import styles from './Practice.css';
 
@@ -12,7 +12,7 @@ const Practice = ({data}) => (
       <ContentList data={data}/>
       <div className={styles.content}>
         {data.map(subject =>
-          <Exercise data={subject} key={subject.title}/>
+          <SubjExercise data={subject} key={subject.title}/>
         )}
       </div>
     </div>
