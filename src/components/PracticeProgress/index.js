@@ -2,8 +2,8 @@ import React from 'react';
 
 import styles from './PracticeProgress.css';
 
-export default (completed, total, next) => {
-  const isStart = completed < total;
+export default ({completed, total, next}) => {
+  const isStart = completed == 0;
   const isFinish = completed == total;
 
   return (
@@ -22,6 +22,9 @@ export default (completed, total, next) => {
             </div>
           </div>
         </div>
+        {/* <div className={styles.progressbar}>
+          div.
+        </div> */}
       </div>
     </div>
   );

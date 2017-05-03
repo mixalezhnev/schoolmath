@@ -1,0 +1,38 @@
+.progress-container {
+  border-bottom: 1px solid var(--border-color);
+  background: #f2f2f2;
+  padding: 30px 0;
+}
+
+.progress {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.mission {
+	display: flex;
+	margin-left: 20px;
+}
+
+.mission-action {
+	composes: primary-font-family from '../../assets/typography.css';
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.mission-next {
+	composes: secondary-font-family from '../../assets/typography.css';
+  margin-top: 5px;
+}
+
+.progressbar {
+  height: 10px;
+  width: 100%;
+  background: color(gray a(80%));
+}
