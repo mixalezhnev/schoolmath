@@ -1,38 +1,54 @@
-.progress-container {
-  border-bottom: 1px solid var(--border-color);
-  background: #f2f2f2;
-  padding: 30px 0;
-}
+$main-padding: 15px;
 
-.progress {
-  background: white;
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin: 0 auto;
+.container {
+  composes: border-color from '../../assets/colors.css';
+  background: #f2f2f2;
   padding: 20px;
 }
 
-.mission {
-	display: flex;
-	margin-left: 20px;
+.main {
+  background: white;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $main-padding;
+  position: relative;
 }
 
 .mission-action {
 	composes: primary-font-family from '../../assets/typography.css';
   font-size: 150%;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .mission-next {
 	composes: secondary-font-family from '../../assets/typography.css';
-  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
-.progressbar {
+.start-btn {
+  composes: buttons from '../../assets/general.css';
+  position: absolute;
+  top: $main-padding;
+  right: $main-padding;
+}
+
+.progress {
   height: 10px;
   width: 100%;
   background: color(gray a(80%));
+  margin-bottom: 5px;
+}
+
+.bar {
+  height: 100%;
+  width: 0;
+  background: deepskyblue;
+}
+
+.details {
+  composes: primary-font-family from '../../assets/typography.css';
+  composes: smallest-font-size from '../../assets/typography.css';
+  composes: secondary-color from '../../assets/colors.css';
+  text-align: center;
 }

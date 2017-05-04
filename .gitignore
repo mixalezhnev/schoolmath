@@ -1,10 +1,16 @@
+.gitignore
+
 # dependencies
 /node_modules
 
-# css styles
-
 #other
-#config
+/config
+/build
+database.rules.json
+functions
+firebase.json
+.firebaserc
+
 
 # testing
 /coverage

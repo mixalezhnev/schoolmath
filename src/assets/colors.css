@@ -2,6 +2,10 @@
 	color: deepskyblue;
 }
 
+.secondary-color {
+  color: color(gray a(85%));
+}
+
 .border-color {
-	color: color(lightgray a(50%));
+	border-color: color(lightgray a(50%));
 }
