@@ -30,7 +30,8 @@ const history = syncHistoryWithStore(browserHistory, store);
 render(
   <Provider store={store}>
     <Router history={history}>
-      <Redirect from='/' to='overview'></Redirect>
+      <Redirect from='/' to='overview'/>
+      <Redirect from='/subject/:subject' to='/subject/:subject/overview'/>
       <Route path='/' component={App}>
         <Route path='/overview' component={Home}>
           <IndexRoute component={Overview}/>
@@ -38,8 +39,8 @@ render(
           <Route path='/progress' component={Progress}/>
         </Route>
         <Route path='/subject/:subject' component={Subject}>
-          <IndexRoute component={SubjectOverview}/>
-          <Route path='/subject/:subject/subject-practice' component={SubjectPractice}/>
+          <Route path= '/subject/:subject/overview' component={SubjectOverview}/>
+          <Route path='/subject/:subject/practice' component={SubjectPractice}/>
         </Route>
       </Route>
     </Router>

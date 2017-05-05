@@ -1,28 +1,37 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Navigation from '../Navigation';
 
 import styles from './Subject.css';
 
-const paths = [
-  {
-    title: 'Обзор курса',
-    path: 'subject/subject-overview'
-  },
-  {
-    title: 'Практикум',
-    path: 'subject/subject-practice'
+class Subject extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      paths: [
+        {
+          title: 'Обзор курса',
+          subject: '',
+          path: `/subject/${this.props.params.subject}/overview`
+        },
+        {
+          title: 'Практикум',
+          subject: '',
+          path: `/subject/${this.props.params.subject}/practice`
+        }
+      ]
+    }
   }
-];
 
-const Subject = ({params, children}) => {
-  return (
-    <div>
-      <Navigation pages={paths}/>
-      <div className={styles.container}>
-        {children}
+  render() {
+    return (
+      <div>
+        <Navigation pages={this.state.paths}/>
+        <div className={styles.container}>
+          {this.props.children}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Subject;
