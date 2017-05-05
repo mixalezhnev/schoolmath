@@ -1,0 +1,45 @@
+.heading {
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  margin-right: 12px;
+}
+
+.title {
+  composes: primary-color from '../../assets/colors.css';
+  composes: largest-font-size from '../../assets/typography.css';
+  text-decoration: none;
+}
+
+.start-btn {
+  composes: buttons from '../../assets/general.css';
+}
+
+.lesson-block {
+  margin-bottom: 15px;
+}
+
+.lesson {
+  display: flex;
+  border-top: 1px solid color(gray a(75%));
+  padding: 15px 0;
+}
+
+.title, .lesson-title {
+   composes: primary-font-family from '../../assets/typography.css';
+}
+
+.lesson-title {
+  composes: primary-font-size from '../../assets/typography.css';
+  color: color(black a(80%));
+}

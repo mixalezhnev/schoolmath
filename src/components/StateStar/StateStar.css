@@ -1,0 +1,20 @@
+.star {
+  composes: svg from '../../assets/general.css';
+  width: 24px;
+  height: 24px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.completed {
+  fill: deepskyblue;
+}
+
+.not-completed {
+  fill: color(gray a(80%));
+  transition: fill .2s ease-in-out;
+}
+
+.not-completed:hover {
+  fill: gray;
+}

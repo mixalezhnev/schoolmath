@@ -1,6 +1,9 @@
 import React from 'react';
+
 import PracticeProgress from '../PracticeProgress';
 import ContentList from '../ContentList';
+import TrainingBlock from '../TrainingBlock';
+import Modal from '../Modal';
 
 import styles from './Practice.css';
 
@@ -9,9 +12,8 @@ const Practice = ({data, progress}) => (
     <PracticeProgress progress={progress}/>
     <div className={styles.container}>
       <ContentList data={data}/>
-      <div className={styles.content}>
-
-      </div>
+      <TrainingBlock data={data}/>
+      <Modal/>
     </div>
   </div>
 );

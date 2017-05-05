@@ -1,5 +1,7 @@
 .content-list {
+  width: 100%;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .list {
@@ -41,3 +43,11 @@
     max-width: 300px;
   }
 }
+
+/*@media only screen and (width <= 1024px ) {
+  .list {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}*/

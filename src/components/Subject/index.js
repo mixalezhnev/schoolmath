@@ -4,17 +4,22 @@ import Navigation from '../Navigation';
 import styles from './Subject.css';
 
 class Subject extends Component {
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
+
   render() {
+    const curSubject = this.props.params.subject;
     const paths = [
       {
         title: 'Обзор курса',
         subject: '',
-        path: `/subject/${this.props.params.subject}/overview`
+        path: `/subject/${curSubject}/overview`
       },
       {
         title: 'Практикум',
         subject: '',
-        path: `/subject/${this.props.params.subject}/practice`
+        path: `/subject/${curSubject}/practice`
       }
     ]
     return (
