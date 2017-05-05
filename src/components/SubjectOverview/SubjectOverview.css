@@ -1,0 +1,22 @@
+.big-title {
+  height: 300px;
+  background: #3E3287;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  composes: main-container from '../../assets/layout.css';
+}
+
+.link-back {
+  composes: links from '../../assets/general.css';
+}
+
+.title {
+  composes: very-big-font-size from '../../assets/typography.css';
+  composes: primary-font-family from '../../assets/typography.css';
+  color: white;
+  /*text-shadow: -3px 2px 5px rgba(150, 150, 150, 1);*/
+}

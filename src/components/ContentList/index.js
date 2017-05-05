@@ -7,7 +7,7 @@ export default({data}) => (
     <ul className={styles.list}>
       {data.map(subject =>
         <li key={subject.title}>
-          <a href="" className={styles.anchor}>{subject.title}</a>
+          <a href={`#${subject.url}`} className={styles.anchor}>{subject.title}</a>
         </li>
       )}
     </ul>

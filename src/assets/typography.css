@@ -38,6 +38,10 @@
 	font-size: 20px;
 }
 
+.very-big-font-size {
+  font-size: 250%;
+}
+
 .smallest-font-size {
 	font-size: 14px;
 }

@@ -9,15 +9,11 @@
 }
 
 .icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 24px;
-  margin-right: 12px;
+  display: none;
 }
 
 .title {
-  composes: primary-color from '../../assets/colors.css';
-  composes: largest-font-size from '../../assets/typography.css';
+  composes: secondary-font-size from '../../assets/typography.css';
   text-decoration: none;
 }
 
@@ -39,7 +35,32 @@
    composes: primary-font-family from '../../assets/typography.css';
 }
 
+.title:hover, .lesson-title:hover {
+  cursor: pointer;
+}
+
+
 .lesson-title {
   composes: primary-font-size from '../../assets/typography.css';
   color: color(black a(80%));
+  margin-left: 12px;
+}
+
+@media only screen and (width > 1024px) {
+  .icon {
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    margin-right: 12px;
+  }
+
+  .title {
+    composes: primary-color from '../../assets/colors.css';
+    composes: largest-font-size from '../../assets/typography.css';
+  }
+
+  .lesson {
+    padding-left: 12px;
+  }
 }

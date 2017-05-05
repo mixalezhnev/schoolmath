@@ -1,7 +1,8 @@
-import React from 'react';
+import {connect} from 'react-redux';
+import SubjectOverview from '../components/SubjectOverview';
 
-const SubjectOverview = () => (
-  <div>Hello from Subject Overview</div>
-);
+const mapStateToProps = ({articles}) => ({
+  data: articles.data
+})
 
-export default SubjectOverview;
+export default connect(mapStateToProps)(SubjectOverview);

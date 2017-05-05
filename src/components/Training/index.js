@@ -6,7 +6,7 @@ import StateStar from '../StateStar';
 import styles from './Training.css';
 
 const Training = ({subject}) => (
-  <div className={styles.container}>
+  <div className={styles.container} id={subject.url}>
     <div className={`${styles.heading} ${styles.group}`}>
       <div className={styles.group}>
         <img src={subject.icon} alt={subject.title} className={styles.icon}/>

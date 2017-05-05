@@ -4,11 +4,9 @@ import OverviewProgress from '../components/OverviewProgress';
 import { connect } from 'react-redux';
 
 
-const mapStateToProps = (state) => {
-	return {
-		progress: state.progress
-	}
-}
+const mapStateToProps = ({progress}) => ({
+  progress
+})
 
 class OverviewProgressContainer extends Component {
 	render() {

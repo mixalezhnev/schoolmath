@@ -1,7 +1,8 @@
-import React from 'react';
+import {connect} from 'react-redux';
+import SubjectPractice from '../components/SubjectPractice';
 
-const SubjectPractice = () => (
-  <div>Hello from Subject Practice</div>
-);
+const mapStateToProps = ({data}) => ({
+  data
+})
 
-export default SubjectPractice;
+export default connect(mapStateToProps)(SubjectPractice);

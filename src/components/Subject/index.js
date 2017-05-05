@@ -12,7 +12,7 @@ class Subject extends Component {
     const curSubject = this.props.params.subject;
     const paths = [
       {
-        title: 'Обзор курса',
+        title: 'Обзор раздела',
         subject: '',
         path: `/subject/${curSubject}/overview`
       },
@@ -25,9 +25,7 @@ class Subject extends Component {
     return (
       <div>
         <Navigation pages={paths}/>
-        <div className={styles.container}>
-          {this.props.children}
-        </div>
+        {this.props.children}
       </div>
     );
   }

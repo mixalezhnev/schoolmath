@@ -18,7 +18,7 @@ import Home from './components/Home';
 import Overview from './containers/Overview';
 import Practice from './containers/Practice';
 import Progress from './containers/Progress';
-import Subject from './containers/Subject';
+import Subject from './components/Subject';
 import SubjectPractice from './containers/SubjectPractice';
 import SubjectOverview from './containers/SubjectOverview';
 
