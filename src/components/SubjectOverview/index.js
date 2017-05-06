@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import FaBeer from 'react-icons/lib/fa/angle-left';
+import FaBack from 'react-icons/lib/fa/angle-left';
 
 import ContentList from '../ContentList';
 
@@ -14,13 +14,11 @@ const SubjectOverview = ({data, params}) => {
   return (
     <div>
       <div className={styles.bigTitle}>
-        <div className={styles.back}>
-          <Link to='/' className={styles.linkBack}>
-            <FaBeer size={30}/>
-            <span>к обзору разделов</span>
-          </Link>
-          <h2 className={styles.title}>{targetSubject.title}</h2>
-        </div>
+        <Link to='/' className={styles.linkBack}>
+          <FaBack size={30}/>
+          <span className={styles.backText}>К обзору разделов</span>
+        </Link>
+        <h2 className={styles.title}>{targetSubject.title}</h2>
       </div>
       <div className={styles.container}>
         <ContentList data={targetSubject.lessons} />
