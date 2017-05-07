@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-const Lesson = () => (
-  <ReactMarkdown source={'# This is a header\n\nAnd this is a paragraph'}/>
+const Lesson = ({lessons, params}) => (
+  <ReactMarkdown source={lessons[params]['content']}/>
 );
 
 export default Lesson;
