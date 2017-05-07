@@ -41,7 +41,7 @@ render(
         </Route>
         <Route path='/subject/:subject' component={Subject}>
           <Route path='/subject/:subject/overview' component={SubjectOverview}>
-            <Route path='/subject/:subject/:lesson' component={Lesson}/>
+            <Route path='/subject/:subject/overview/:lesson' component={Lesson}/>
           </Route>
           <Route path='/subject/:subject/practice' component={SubjectPractice}/>
         </Route>

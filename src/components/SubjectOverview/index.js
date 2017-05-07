@@ -6,7 +6,7 @@ import ContentList from '../ContentList';
 
 import styles from './SubjectOverview.css';
 
-const SubjectOverview = ({data, params}) => {
+const SubjectOverview = ({data, children, params}) => {
   const targetSubject = data.filter(subject =>
     subject.url == params.subject
   )[0];
@@ -22,6 +22,7 @@ const SubjectOverview = ({data, params}) => {
       </div>
       <div className={styles.container}>
         <ContentList data={targetSubject.lessons} subjRoute={params.subject}/>
+        {children}
       </div>
     </div>
   );
