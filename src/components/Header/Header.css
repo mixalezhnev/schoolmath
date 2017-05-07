@@ -3,6 +3,11 @@
   background: #044389;
 }
 
+.transparent {
+  background: transparent;
+  border-bottom: 1px solid var(--subject-bg-color);
+}
+
 .container {
   display: flex;
   justify-content: space-between;

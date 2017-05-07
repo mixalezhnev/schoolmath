@@ -17,6 +17,11 @@
   border-bottom: 4px solid deepskyblue;
 }
 
+.active-link-alt {
+  color: var(--subject-border-color);
+  border-color: var(--subject-border-color);
+}
+
 .link:not(.active-link):hover {
-	border-bottom: 4px solid gray; 
+	border-bottom: 4px solid gray;
 }

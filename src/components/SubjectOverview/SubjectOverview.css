@@ -1,6 +1,6 @@
 .big-title {
   height: 300px;
-  background: #3E3287;
+  background: var(--subject-bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,8 +13,22 @@
 
 .link-back {
   composes: links from '../../assets/general.css';
+  composes: primary-font-family from '../../assets/typography.css';
+  font-size: 12px;
+  display: flex;
+  color: color(white a(60%));
+  text-transform: uppercase;
+  transition: text-indent .2s ease-in-out;
   position: absolute;
-  color: white;
+  top: 110px;
+}
+
+.link-back:hover {
+  text-indent: 5px;
+}
+
+.back-text {
+  align-self: center;
 }
 
 .title {

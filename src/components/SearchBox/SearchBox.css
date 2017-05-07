@@ -19,3 +19,8 @@
 	margin-right: 10px;
   border-radius: 20px;
 }
+
+.input-bordered {
+  composes: search-input;
+  border: 2px solid var(--subject-bg-color);
+}

@@ -15,13 +15,13 @@ const SubjectOverview = ({data, params}) => {
     <div>
       <div className={styles.bigTitle}>
         <Link to='/' className={styles.linkBack}>
-          <FaBack size={30}/>
+          <FaBack size={24}/>
           <span className={styles.backText}>К обзору разделов</span>
         </Link>
         <h2 className={styles.title}>{targetSubject.title}</h2>
       </div>
       <div className={styles.container}>
-        <ContentList data={targetSubject.lessons} />
+        <ContentList data={targetSubject.lessons} subjRoute={params.subject}/>
       </div>
     </div>
   );

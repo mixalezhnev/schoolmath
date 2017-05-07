@@ -21,6 +21,7 @@ import Progress from './containers/Progress';
 import Subject from './components/Subject';
 import SubjectPractice from './containers/SubjectPractice';
 import SubjectOverview from './containers/SubjectOverview';
+import Lesson from './containers/Lesson';
 
 import './index.css';
 
@@ -39,11 +40,13 @@ render(
           <Route path='/progress' component={Progress}/>
         </Route>
         <Route path='/subject/:subject' component={Subject}>
-          <Route path= '/subject/:subject/overview' component={SubjectOverview}/>
+          <Route path='/subject/:subject/overview' component={SubjectOverview}>
+            <Route path='/subject/:subject/:lesson' component={Lesson}/>
+          </Route>
           <Route path='/subject/:subject/practice' component={SubjectPractice}/>
         </Route>
-      </Route>
-    </Router>
+        </Route>
+      </Router>
   </Provider>,
 	document.getElementById('root')
 );

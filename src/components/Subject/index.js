@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+
+import Header from '../Header';
 import Navigation from '../Navigation';
 
 import styles from './Subject.css';
@@ -24,7 +26,8 @@ class Subject extends Component {
     ]
     return (
       <div>
-        <Navigation pages={paths}/>
+        <Header flag='subject'/>
+        <Navigation pages={paths} flag='subject'/>
         {this.props.children}
       </div>
     );

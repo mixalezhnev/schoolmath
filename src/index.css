@@ -1,7 +1,12 @@
 *, ::after, ::before {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+:root {
+  --subject-bg-color: #3E3287;
+  --subject-border-color: #FF5964;
 }
 
 :global {

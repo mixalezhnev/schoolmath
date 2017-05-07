@@ -1,6 +1,6 @@
 .container {
   composes: main-container from '../../assets/layout.css';
-  margin-top: 30px;
+  /*margin-top: 30px;*/
 }
 
 .content {

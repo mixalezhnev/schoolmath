@@ -13,5 +13,15 @@
 .sign-in-link {
 	composes: links from '../../assets/general.css';
 	composes: primary-font-family from '../../assets/typography.css';
+  display: block;
+  padding: 5px 10px;
+  border: 2px solid #91DC5A;
+  border-radius: 10px;
   color: #91DC5A;
+}
+
+.sign-in-link-alt {
+  composes: sign-in-link;
+  border-color: var(--subject-bg-color);
+  color: var(--subject-bg-color) !important;
 }
