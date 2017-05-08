@@ -7,8 +7,9 @@ import ContentList from '../ContentList';
 import styles from './SubjectOverview.css';
 
 const SubjectOverview = ({data, children, params}) => {
+
   const targetSubject = data.filter(subject =>
-    subject.url == params.subject
+    subject.id == params.subject
   )[0];
 
   return (
@@ -28,7 +29,7 @@ const SubjectOverview = ({data, children, params}) => {
           />
           <div className={styles.desc}>
             <p className={styles.descText}>{targetSubject.description}</p>
-            </div>
+          </div>
         </div>
         {children}
       </div>

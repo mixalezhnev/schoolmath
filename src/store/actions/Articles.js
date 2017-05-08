@@ -2,10 +2,11 @@ import {
 	GET_ARTICLES_REQUEST,
 	GET_ARTICLES_SUCCESS,
 	GET_ARTICLES_FAILURE
-} from '../constants';
+} from '../constants/articles';
+
 import { database } from '../../firebaseApp';
 
-const rootRef = database.ref();
+const ref = database.ref('articles');
 
 const getArticlesRequest = () => ({
 	type: GET_ARTICLES_REQUEST,
@@ -25,7 +26,7 @@ export const listenToArticles = () => {
 	return async dispatch => {
 		try {
 			dispatch(getArticlesRequest());
-			const snapshot = await rootRef.once('value');
+			const snapshot = await ref.once('value');
 			dispatch(getArticlesSuccess(snapshot));
 		} catch (err) {
 			dispatch(getArticlesFailure(err));

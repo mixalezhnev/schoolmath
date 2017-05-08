@@ -1,30 +1,35 @@
 import {
-	GET_ARTICLES_REQUEST,
-	GET_ARTICLES_SUCCESS,
-	GET_ARTICLES_FAILURE
-} from '../constants/articles';
+	GET_LESSON_REQUEST,
+	GET_LESSON_SUCCESS,
+	GET_LESSON_FAILURE
+} from '../constants/lesson';
 
 const initialState = {
-	data: [],
+  data: {
+    title: '',
+    content: ''
+  },
 	isFetching: false,
 	error: null
 };
 
 const articles = (state = initialState, action) => {
 	switch (action.type) {
-		case GET_ARTICLES_REQUEST:
+		case GET_LESSON_REQUEST:
 			return {
 				...state,
 				error: null,
 				isFetching: true
 			}
-		case GET_ARTICLES_SUCCESS:
+		case GET_LESSON_SUCCESS:
 			return {
 				...state,
-				data: action.payload,
+				data: {
+          ...action.payload
+        },
 				isFetching: false
 			};
-		case GET_ARTICLES_FAILURE:
+		case GET_LESSON_FAILURE:
 			return {
 				...state,
 				error: action.payload,

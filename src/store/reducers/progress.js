@@ -1,31 +1,28 @@
 import {
-	SET_PROGRESS,
-	SET_NEXT_EXERCISE
-} from '../constants';
+	GET_PROGRESS_SUCCESS,
+	GET_PROGRESS_FAILURE
+} from '../constants/progress';
 
 const initialState = {
-  completed: 0,
-	total: 0,
-	next: 'Обозначение натуральных чисел',
+  progress: {
+    completed: false,
+    subjects: {}
+  },
+  error: null
 };
 
 const progress = (state = initialState, action) => {
 	switch (action.type) {
-		case SET_PROGRESS: {
-      const {completed, total} = action.payload;
-      const percentage = Math.round(completed * 100 / total );
-
+		case GET_PROGRESS_SUCCESS: {
       return {
 				...state,
-        completed,
-				total,
-        percentage
+        progress: action.payload
 			};
     }
-		case SET_NEXT_EXERCISE:
+		case GET_PROGRESS_FAILURE:
 			return {
 				...state,
-				next: action.payload
+				error: action.payload
 			}
 		default:
 			return state;

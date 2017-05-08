@@ -1,14 +1,18 @@
-import React from 'react';
+// import React from 'react';
 import Lesson from '../components/Lesson';
 
 import {connect} from 'react-redux';
 
-const mapStateToProps = ({articles}, ownProps) => ({
-  lesson: articles.data.filter(subject =>
-    subject.url == ownProps.params.subject
-  )[0].lessons.filter(lesson =>
-    lesson.url == ownProps.params.lesson
-  )[0]
+import { listenToLesson } from '../store/actions/Lesson';
+
+const mapStateToProps = ({lesson}) => ({
+  lesson: lesson.data
 })
 
-export default connect(mapStateToProps)(Lesson);
+const mapDispatchToProps = (dispatch) => ({
+  getLesson: (id) => {
+    dispatch(listenToLesson(id));
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Lesson);

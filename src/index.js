@@ -28,6 +28,16 @@ import './index.css';
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
+import {auth} from './firebaseApp';
+import {listenToProgress} from './store/actions/ProgressActions';
+
+auth.onAuthStateChanged(user => {
+  if (user) {
+    console.log(user);
+    store.dispatch(listenToProgress(user));
+  }
+})
+
 render(
   <Provider store={store}>
     <Router history={history}>

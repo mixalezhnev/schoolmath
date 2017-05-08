@@ -3,8 +3,6 @@ import React from 'react';
 import Article from '../../components/Article';
 import OverviewProgress from '../../containers/OverviewProgress';
 
-import { connect } from 'react-redux';
-
 import styles from './Overview.css';
 
 const Overview = ({ data }) => {
