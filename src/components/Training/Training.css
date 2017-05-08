@@ -44,6 +44,7 @@
   composes: primary-font-size from '../../assets/typography.css';
   color: color(black a(80%));
   margin-left: 12px;
+  align-self: center;
 }
 
 @media only screen and (width > 1024px) {

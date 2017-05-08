@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import Lesson from '../components/Lesson';
 
-const Lesson = ({lessons, params}) => (
-  <ReactMarkdown source={lessons[params]['content']}/>
-);
+import {connect} from 'react-redux';
 
-export default Lesson;
+const mapStateToProps = ({articles}, ownProps) => ({
+  lesson: articles.data.filter(subject =>
+    subject.url == ownProps.params.subject
+  )[0].lessons.filter(lesson =>
+    lesson.url == ownProps.params.lesson
+  )[0]
+})
+
+export default connect(mapStateToProps)(Lesson);

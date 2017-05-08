@@ -1,16 +1,21 @@
 @font-face {
 	font-family: 'Open Sans';
-	src: url(./fonts/osr.ttf)
+	src: url(./fonts/osr.ttf);
 }
 
 @font-face {
 	font-family: 'Open Sans Light';
-	src: url(./fonts/osl.ttf)
+	src: url(./fonts/osl.ttf);
 }
 
 @font-face {
 	font-family: 'PT Sans';
-	src: url(./fonts/ptr.ttf)
+	src: url(./fonts/ptr.ttf);
+}
+
+@font-face {
+  font-family: 'proxima-nova';
+  src: url(./fonts/pn.otf);
 }
 
 .primary-font-family {
@@ -24,6 +29,10 @@
 
 .serif {
 	font-family: serif;
+}
+
+.lesson-font-family {
+  font-family: 'proxima-nova';
 }
 
 .primary-font-size {

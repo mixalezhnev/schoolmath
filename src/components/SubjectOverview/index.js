@@ -21,7 +21,15 @@ const SubjectOverview = ({data, children, params}) => {
         <h2 className={styles.title}>{targetSubject.title}</h2>
       </div>
       <div className={styles.container}>
-        <ContentList data={targetSubject.lessons} subjRoute={params.subject}/>
+        <div className={styles.flex}>
+          <ContentList
+            data={targetSubject.lessons}
+            subjRoute={params.subject}
+          />
+          <div className={styles.desc}>
+            <p className={styles.descText}>{targetSubject.description}</p>
+            </div>
+        </div>
         {children}
       </div>
     </div>

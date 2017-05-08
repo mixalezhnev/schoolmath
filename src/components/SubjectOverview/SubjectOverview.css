@@ -1,3 +1,11 @@
+.container {
+  composes: main-container from '../../assets/layout.css';
+}
+
+.flex {
+  display: flex
+}
+
 .big-title {
   height: 300px;
   background: var(--subject-bg-color);
@@ -5,10 +13,6 @@
   justify-content: center;
   align-items: center;
   position: relative;
-}
-
-.container {
-  composes: main-container from '../../assets/layout.css';
 }
 
 .link-back {
@@ -36,4 +40,15 @@
   composes: primary-font-family from '../../assets/typography.css';
   color: white;
   /*text-shadow: -3px 2px 5px rgba(150, 150, 150, 1);*/
+}
+
+.desc {
+  margin-left: 30px;
+}
+
+.desc-text {
+  composes: primary-font-family from '../../assets/typography.css';
+  composes: secondary-font-size from '../../assets/typography.css';
+  padidng-left: 30px;
+  line-height: 24px;
 }

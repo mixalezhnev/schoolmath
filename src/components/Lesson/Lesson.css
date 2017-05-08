@@ -1,0 +1,18 @@
+.content {
+  composes: lesson-font-family from '../../assets/typography.css';
+}
+
+.title {
+  composes: primary-font-family from '../../assets/typography.css';
+  font-weight: lighter;
+  margin-bottom: 15px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 10px 0;
+}
+
+.paragraph {
+  font-size: 20px;
+  color: color(black a(85%));
+  margin-bottom: 20px;
+}
