@@ -16,3 +16,23 @@
   color: color(black a(85%));
   margin-bottom: 20px;
 }
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.question-block {
+  margin: 25px 0;
+}
+
+.questions {
+  margin-bottom: 10px;
+}
+
+.q-list {
+  composes: secondary-font-size from '../../assets/typography.css';
+  list-style: decimal;
+  list-style-position: inside;
+  line-height: 30px;
+}

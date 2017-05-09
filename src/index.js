@@ -33,7 +33,7 @@ import {listenToProgress} from './store/actions/ProgressActions';
 
 auth.onAuthStateChanged(user => {
   if (user) {
-    console.log(user);
+    console.log(`I signed in as ${user.uid}`);
     store.dispatch(listenToProgress(user));
   } else {
     auth.signInAnonymously()

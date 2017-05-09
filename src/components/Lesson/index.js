@@ -7,17 +7,26 @@ const Lesson = ({lesson}) => {
 
   return (
     <div className={styles.content}>
-      <h2 className={styles.title}>{title}</h2>
+      <h1 className={styles.title}>{title}</h1>
+      <div className={styles.imageContainer}>
+        <img src={images[0]} alt='lesson-image'/>
+      </div>
       {
         text.split('.').map((p, i) =>
           <p className={styles.paragraph} key={i}>{p}.</p>
         )
       }
-      {
-        images.map(img =>
-          <img src={img} alt="lesson-image" key={img}/>
-        )
-      }
+      <div className={styles.imageContainer}>
+        <img src={images[images.length - 1]} alt='lesson-image'/>
+      </div>
+      <div className={styles.questionBlock}>
+        <h2 className={styles.questions}>Контрольные вопросы:</h2>
+        <ul className={styles.qList}>
+          {questions.map((q, i) =>
+            <li key={i}>{q}</li>
+          )}
+        </ul>
+      </div>
     </div>
   );
 }

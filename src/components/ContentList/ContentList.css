@@ -39,7 +39,7 @@
 
 @media only screen and (width >= 768px){
   .content-list {
-    max-width: 300px;
+    flex: 1;
   }
   .list {
     columns: 1;

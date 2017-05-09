@@ -3,17 +3,14 @@ import OverviewProgress from '../components/OverviewProgress';
 
 import { connect } from 'react-redux';
 
-
 const mapStateToProps = ({progress}) => ({
-  progress
+  progress: progress.data
 })
 
 class OverviewProgressContainer extends Component {
 	render() {
 		return (
-			<div>
-				<OverviewProgress {...this.props.progress} />
-			</div>
+      <OverviewProgress {...this.props.progress} />
 		);
 	}
 }

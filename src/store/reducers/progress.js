@@ -4,8 +4,12 @@ import {
 } from '../constants/progress';
 
 const initialState = {
-  progress: {
-    completed: false,
+  data: {
+    next: "Обозначение натуральных чисел",
+    total: 125,
+    completed: 0,
+    percentage: 0,
+    // прогресс по разделам и урокам
     subjects: {}
   },
   error: null
@@ -14,6 +18,10 @@ const initialState = {
 const progress = (state = initialState, action) => {
 	switch (action.type) {
 		case GET_PROGRESS_SUCCESS: {
+      if (Object.keys(action.payload).length == 0)
+        return state;
+
+      // Здесь будет происходить вся магия связання с прогрессом
       return {
 				...state,
         progress: action.payload

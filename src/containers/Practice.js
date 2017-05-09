@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = ({ articles, progress }) => ({
 	data: articles.data,
-  progress
+  progress: progress.data
 })
 
 
