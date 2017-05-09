@@ -35,6 +35,10 @@ auth.onAuthStateChanged(user => {
   if (user) {
     console.log(user);
     store.dispatch(listenToProgress(user));
+  } else {
+    auth.signInAnonymously()
+    .then(info => console.log(`I was born ${info}`))
+    .catch(err => console.error(err))
   }
 })
 

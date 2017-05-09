@@ -7,7 +7,11 @@ import {
 const initialState = {
   data: {
     title: '',
-    content: ''
+    content: {
+      images: [],
+      text: ""
+    },
+    questions: []
   },
 	isFetching: false,
 	error: null
