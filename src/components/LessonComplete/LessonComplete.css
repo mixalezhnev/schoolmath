@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.complete-message {
+  composes: complete-font-family from '../../assets/typography.css';
+  composes: very-big-font-size  from '../../assets/typography.css';
+}
+
+.complete-icon {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  top: 35%;
+  background: url(./complete.svg) no-repeat;
+}

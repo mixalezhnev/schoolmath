@@ -1,7 +1,7 @@
 *, ::after, ::before {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -10,11 +10,11 @@
 }
 
 :global {
-	#root {
-		height: 100%;
-	}
+  #root {
+    height: 100%;
+  }
 }
 
 html, body {
-	height: 100%;
+  height: 100%;
 }

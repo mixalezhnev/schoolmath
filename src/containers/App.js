@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {listenToArticles} from '../store/actions/Articles';
+import {listenToArticles} from '../store/actions/articles';
+// import {listenToPractice} from '../store/actions/practice';
 
 const mapDispatchToProps = (dispatch) => ({
   getArticles: bindActionCreators(listenToArticles, dispatch)
@@ -12,14 +13,16 @@ const mapDispatchToProps = (dispatch) => ({
 
 class App extends Component {
 	componentDidMount() {
-    this.props.getArticles();
+    const {getArticles} = this.props;
+
+    getArticles();
 	}
 
 	render() {
 		return (
 			<div className='App'>
         {this.props.children}
-				<Footer />
+				{/* <Footer /> */}
 			</div>
 		);
 	}

@@ -9,6 +9,16 @@ $progress-stroke-color: #9BC53D;
   position: relative;
 }
 
+.text {
+  composes: primary-font-family from '../../assets/typography.css';
+  font-size: 36px;
+  fill: #9BC53D;
+}
+
+.small-text {
+  font-size: 20px;
+}
+
 .icon {
 	width: 100px;
   height: 100px;
@@ -17,6 +27,11 @@ $progress-stroke-color: #9BC53D;
 .small-icon {
 	width: 55px;
 	height: 55px;
+}
+
+.big-icon {
+  width: 200px;
+  height: 200px;
 }
 
 .icon, .small-icon {
@@ -31,7 +46,6 @@ $progress-stroke-color: #9BC53D;
 .backdrop {
   stroke: lightgray;
 }
-
 
 .progress {
   stroke: $progress-stroke-color;

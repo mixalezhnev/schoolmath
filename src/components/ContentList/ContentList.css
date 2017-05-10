@@ -16,7 +16,7 @@
   padding: 5px;
   border-left: 4px solid transparent;
   color: color(black a(60%));
-  transition: color .2s linear;
+  transition: color .2s linear, border-color .2s linear;
 }
 
 .anchor:hover {
@@ -30,10 +30,7 @@
 }
 
 .heading {
-  composes: secondary-font-size from '../../assets/typography.css';
-  composes: secondary-font-family from '../../assets/typography.css';
-  color: color(black a(90%));
-  text-transform: uppercase;
+  composes: headings from '../../assets/general.css';
   margin: 0 0 9px 10px;
 }
 

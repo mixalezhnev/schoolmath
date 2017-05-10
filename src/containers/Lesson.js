@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
+
 import Lesson from '../components/Lesson';
 
 import {connect} from 'react-redux';
 
-import { listenToLesson } from '../store/actions/Lesson';
+import { listenToLesson } from '../store/actions/lesson';
 
 const mapStateToProps = ({lesson}) => ({
   lesson: lesson.data
@@ -16,6 +17,7 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 class LessonContainer extends Component {
+
   componentDidMount() {
     this.props.getLesson(this.props.params.lesson);
   }

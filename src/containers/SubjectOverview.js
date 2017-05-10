@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import SubjectOverview from '../components/SubjectOverview';
 
+const mapStateToProps = ({articles}) => ({
+  data: articles.data
+})
+
 class SubjectOverviewContainer extends Component {
   static propTypes = {
     data: PropTypes.array.isRequired
@@ -14,8 +18,5 @@ class SubjectOverviewContainer extends Component {
   }
 }
 
-const mapStateToProps = ({articles}) => ({
-  data: articles.data
-})
 
 export default connect(mapStateToProps)(SubjectOverviewContainer);

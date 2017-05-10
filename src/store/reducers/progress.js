@@ -1,40 +1,77 @@
 import {
-	GET_PROGRESS_SUCCESS,
-	GET_PROGRESS_FAILURE
+  GET_PROGRESS_SUCCESS,
+  GET_PROGRESS_FAILURE,
+  UPDATE_PROGRESS
 } from '../constants/progress';
+
+import {
+  COMPLETE_LESSON_SUCCESS,
+  COMPLETE_LESSON_FAILURE
+} from '../constants/practice';
+
+import {findNotCompleted, getTotal, getCompleted,} from '../../ulits';
 
 const initialState = {
   data: {
-    next: "Обозначение натуральных чисел",
-    total: 125,
+    next: "0-natural-numbers-designation",
+    total: 175,
     completed: 0,
-    percentage: 0,
-    // прогресс по разделам и урокам
     subjects: {}
   },
   error: null
 };
 
 const progress = (state = initialState, action) => {
-	switch (action.type) {
-		case GET_PROGRESS_SUCCESS: {
-      if (Object.keys(action.payload).length == 0)
-        return state;
-
-      // Здесь будет происходить вся магия связання с прогрессом
+  switch (action.type) {
+    case GET_PROGRESS_SUCCESS:
+      {
+        return {
+          ...state,
+          data: {
+            ...state.data,
+            subjects: action.payload,
+            total: getTotal(action.payload),
+            completed: getCompleted(action.payload),
+            next: findNotCompleted(action.payload)
+          },
+        };
+      }
+    case GET_PROGRESS_FAILURE:
       return {
-				...state,
-        progress: action.payload
-			};
+        ...state,
+        error: action.payload
+      }
+    case COMPLETE_LESSON_SUCCESS: {
+      const {lesson, subject} = action.payload;
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          subjects: {
+            ...state.data.subjects,
+            [subject]: {
+              ...state.data.subjects[subject],
+              [lesson]: {
+                ...state.data.subjects[subject][lesson],
+                completed: true
+              }
+            }
+          }
+        }
+      }
     }
-		case GET_PROGRESS_FAILURE:
-			return {
-				...state,
-				error: action.payload
-			}
-		default:
-			return state;
-	}
+    case UPDATE_PROGRESS:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          completed: getCompleted(state.data.subjects)
+        }
+      }
+    default:
+      return state;
+  }
+
 }
 
 export default progress;

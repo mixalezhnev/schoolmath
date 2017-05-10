@@ -1,0 +1,191 @@
+.container {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: color(black a(65%));
+  transition: top .2s linear;
+  display: flex;
+  justify-content: center;
+}
+
+.hidden {
+  composes: container;
+  top: -100%;
+}
+
+.visible {
+  composes: container;
+  top: 0;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  background: white;
+  align-self: center;
+  position: relative;
+  border-radius: 5px;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  max-height: 80px;
+  border-bottom: 1px solid color(black a(75%));
+}
+
+.close{
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+}
+
+.close-icon {
+  color: color(gray a(80%));
+  transition: transform .3s ease-in-out;
+}
+
+.close-icon:hover {
+  transform: rotate(90deg);
+}
+
+.title {
+  composes: primary-font-family from '../../assets/typography.css';
+  composes: primary-font-size from '../../assets/typography.css';
+  padding-left: 10px;
+  color: color(black a(75%));
+  /*composes: secondary-font-size from '../../assets/typography.css';*/
+}
+
+.playground {
+  height: 80%;
+}
+
+.content {
+  composes: primary-font-family from '../../assets/typography.css';
+  composes: largest-font-size from '../../assets/typography.css';
+  padding: 20px;
+}
+
+.input {
+  composes: secondary-font-size from '../../assets/typography.css';
+  padding: 5px;
+  height: 40px;
+  width: 80px;
+  margin-top: 10px
+}
+
+.pre-answer {
+  margin-right: 5px;
+}
+
+.post-answer {
+  margin-left: 5px;
+}
+
+.footer {
+  height: 10%;
+  max-height: 80px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid color(black a(75%));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.check {
+  composes: buttons from '../../assets/general.css';
+  composes: primary-font-familry from '../../assets/typography.css';
+  composes: secondary-font-size from '../../assets/typography.css';
+  height: 80%;
+  text-transform: uppercase;
+  font-weight: lighter;
+  background: #7FC054;
+  border-radius: 5px;
+  padding: 0 30px;
+}
+
+.message {
+  composes: primary-font-family from '../../assets/typography.css';
+  position: absolute;
+  right: 20px;
+  bottom: 100px;
+  padding: 10px 10px 10px 40px;
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+
+.message::after {
+  display: block;
+  content: '';
+  position: absolute;
+  right: 20px;
+  bottom: -11px;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gray;
+}
+
+.message::before {
+  display: block;
+  content: '';
+  width: 28px;
+  height: 3px;
+  border-bottom: 3px solid white;
+  position: absolute;
+  bottom: -2px;
+  right: 16px;
+}
+
+.correct-message {
+  composes: message;
+  background: url(./smiling.svg) no-repeat;
+  background-size: 30px 30px;
+  background-position: 5px center;
+}
+
+.error-message {
+  composes: message;
+  background: url(./try-again.svg) no-repeat;
+  animation: shake .7s ease-in-out 1;
+  background-size: 30px 30px;
+  background-position: 5px center;
+}
+
+@keyframes shake {
+  10% {
+    right: 30px;
+  }
+
+  50% {
+    right: 0px;
+  }
+
+  70% {
+    right: 10px;
+  }
+
+  100% {
+    right: 20px;
+  }
+}
+
+@media only screen and (width >= 1024px) {
+  .main {
+    height: 90%;
+    width: 60%;
+  }
+
+  .title {
+    composes: largest-font-size from '../../assets/typography.css';
+  }
+}

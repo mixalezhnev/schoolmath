@@ -19,7 +19,9 @@ const Header = ({flag}) => {
           </Link>
         </div>
         <div className={styles.rightBlock}>
-          <SearchBox bordered={flag}/>
+          <div className={styles.searchBox}>
+            <SearchBox bordered={flag}/>
+          </div>
           <Auth flag={flag}/>
         </div>
       </div>

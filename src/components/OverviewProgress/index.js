@@ -8,7 +8,7 @@ import styles from './OverviewProgress.css';
 
 import { Link } from 'react-router';
 
-const OverviewProgress = ({ total, percentage, next }) => {
+const OverviewProgress = ({ percentage, next }) => {
 	const isStart = percentage == 0;
 
 	return (

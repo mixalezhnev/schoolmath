@@ -2,10 +2,9 @@
   composes: main-container from '../../assets/layout.css';
 }
 
-
 .big-title {
   height: 300px;
-  background: var(--subject-bg-color);
+  background: linear-gradient(140deg,#009688 10%,#4587bb 90%);
   display: flex;
   justify-content: center;
   align-items: center;

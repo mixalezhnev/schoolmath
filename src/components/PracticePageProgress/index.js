@@ -1,9 +1,9 @@
 import React from 'react';
 
-import styles from './PracticeProgress.css';
+import styles from './PracticePageProgress.css';
 
- const PracticeProgress = ({progress}) => {
-  const {completed, percentage, total, next} = progress;
+ const PracticePageProgress = ({ progress }) => {
+  const {completed, percentage, total, nextTitle} = progress;
   const isStart = completed == 0;
   const isFinish = completed == total;
 
@@ -21,13 +21,13 @@ import styles from './PracticeProgress.css';
         </div>
         <div className={styles.missionNext}>
           <span>
-            Следующее задание: {next}
+            Следующее задание: {nextTitle}
           </span>
         </div>
         <button className={styles.startBtn}>Старт</button>
         <div className={styles.progress}>
           <div className={styles.bar} style={{
-            width: percentage + '%'
+            width: `${percentage}%`
           }}></div>
         </div>
         <div className={styles.details}>
@@ -38,4 +38,4 @@ import styles from './PracticeProgress.css';
   );
 }
 
-export default PracticeProgress;
+export default PracticePageProgress;

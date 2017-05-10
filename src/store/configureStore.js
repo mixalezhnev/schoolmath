@@ -9,8 +9,5 @@ import {routerMiddleware} from 'react-router-redux';
 export default initialState => {
   const middleware = routerMiddleware(browserHistory);
 
-  return createStore(
-    rootReducer,
-    initialState,
-    applyMiddleware(thunk, logger, middleware));
+  return createStore(rootReducer, initialState, applyMiddleware(thunk, logger, middleware));
 }

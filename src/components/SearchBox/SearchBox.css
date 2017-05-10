@@ -14,13 +14,14 @@
 .search-input {
 	composes: primary-font-size from '../../assets/typography.css';
 	composes: inputs from '../../assets/general.css';
-	width: 400px;
+	width: 100%;
+  height: 100%;
 	padding: 10px 40px 10px 10px;
-	margin-right: 10px;
-  border-radius: 20px;
+  border-radius: 10px;
+  transition: width .2s ease-in-out;
 }
 
-.input-bordered {
+.bordered-input {
   composes: search-input;
   border: 2px solid var(--subject-bg-color);
 }

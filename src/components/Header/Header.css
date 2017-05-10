@@ -20,6 +20,10 @@
   align-items: center;
 }
 
+.search-box {
+	margin-right: 10px;
+}
+
 .logo {
   height: 30px;
   width: 30px;

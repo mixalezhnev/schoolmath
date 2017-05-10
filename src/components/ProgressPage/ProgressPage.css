@@ -1,0 +1,83 @@
+.container {
+  composes: main-container from  '../../assets/layout.css';
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-block {
+  flex: 1 1 15%;
+  margin-bottom: 20px;
+}
+
+.stats-block {
+  flex: 3;
+}
+
+.progress {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats {
+  min-height: 200px;
+  padding: 10px;
+}
+
+.subject-block {
+  margin-bottom: 10px;
+}
+
+.subject-title {
+  composes: primary-font-family from '../../assets/typography.css';
+  composes: primary-font-size from '../../assets/typography.css';
+  color: color(color(black a(70%)));
+}
+
+.status-container {
+  display: flex;
+  margin-top: 5px;
+}
+
+.status {
+  width: 20px;
+  height: 20px;
+  border: 1px solid color(gray a(30%));
+}
+
+.status+.status {
+  margin-left: 5px;
+}
+
+.status-completed {
+  composes: status;
+  background: #9BC53D;
+}
+
+.lesson-status {
+  composes: status;
+  background: color(gray a(30%));
+}
+
+.stats, .progress {
+  background: color(lightgray a(20%));
+  background: color(lightgray a(20%));
+}
+
+.title {
+  composes: headings from '../../assets/general.css';
+  opacity: .75;
+  margin: 0 0 5px 5px;
+}
+
+
+@media only screen and (width > 768px) {
+  .container {
+    flex-direction: row;
+  }
+  .progress {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}

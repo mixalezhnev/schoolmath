@@ -18,6 +18,11 @@
   src: url(./fonts/pn.otf);
 }
 
+@font-face {
+  font-family: 'Bad Script';
+  src: url(./fonts/bs.ttf);
+}
+
 .primary-font-family {
 	/*font-family: 'Open Sans Light';*/
 	font-family: 'PT Sans';
@@ -33,6 +38,10 @@
 
 .lesson-font-family {
   font-family: 'proxima-nova';
+}
+
+.complete-font-family {
+	font-family: 'Bad Script';
 }
 
 .primary-font-size {
