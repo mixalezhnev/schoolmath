@@ -9,12 +9,12 @@ import styles from './SubjectOverview.css';
 const SubjectOverview = ({data, children, params}) => {
 
   const targetSubject =
-    data.length === 0 ? [{
+    data.length === 0 ? {
       description: '',
       title: '',
       lessons: []
-    }] :  data.filter(subject =>
-      subject.id == params.subject)[0];
+    } :  data.find(subject =>
+      subject.id == params.subject);
 
   return (
     <div>

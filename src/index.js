@@ -37,21 +37,21 @@ auth.onAuthStateChanged(user => {
 
 render(
   <Provider store={store}>
-  <Router history={history}>
-    <Redirect from='/' to='overview'/>
-    <Redirect from='/subject/:subject' to='/subject/:subject/overview'/>
-    <Route path='/' component={App}>
-      <Route path='/overview' component={Home}>
-        <IndexRoute component={OverviewPage}/>
-        <Route path='/practice' component={PracticePage}/>
-        <Route path='/progress' component={ProgressPage}/>
-      </Route>
-      <Route path='/subject/:subject' component={Subject}>
-        <Route path='/subject/:subject/overview' component={SubjectOverview}>
-          <Route path='/subject/:subject/overview/:lesson' component={Lesson}/>
+    <Router history={history}>
+      <Redirect from='/' to='overview'/>
+      <Redirect from='/subject/:subject' to='/subject/:subject/overview'/>
+      <Route path='/' component={App}>
+        <Route path='/overview' component={Home}>
+          <IndexRoute component={OverviewPage}/>
+          <Route path='/practice' component={PracticePage}/>
+          <Route path='/progress' component={ProgressPage}/>
         </Route>
-        <Route path='/subject/:subject/practice' component={SubjectPractice}/>
+        <Route path='/subject/:subject' component={Subject}>
+          <Route path='/subject/:subject/overview' component={SubjectOverview}>
+            <Route path='/subject/:subject/overview/:lesson' component={Lesson}/>
+          </Route>
+          <Route path='/subject/:subject/practice' component={SubjectPractice}/>
+        </Route>
       </Route>
-    </Route>
-  </Router>
-</Provider>, document.getElementById('root'));
+    </Router>
+  </Provider>, document.getElementById('root'));

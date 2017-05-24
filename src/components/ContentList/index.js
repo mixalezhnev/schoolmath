@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 
 import styles from './ContentList.css';
 
-export default({data, subjRoute}) => {
+const ContentList = ({ data, subjRoute }) => {
   return(
     <div className={styles.contentList}>
       <h2 className={styles.heading}>Содержание</h2>
@@ -24,3 +24,5 @@ export default({data, subjRoute}) => {
     </div>
   )
 }
+
+export default ContentList;
