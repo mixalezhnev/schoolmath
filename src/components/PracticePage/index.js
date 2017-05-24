@@ -7,17 +7,20 @@ import Modal from '../../containers/Modal';
 
 import styles from './Practice.css';
 
-const PracticePage = () => {
-  return (
-    <div>
+const PracticePage = ({ subject }) => {
+  return subject ?
+    (<div>
+      <TrainingBlock subject={subject} />
+      <Modal />
+    </div>) :
+    (<div>
       <PracticePageProgress/>
       <div className={styles.container}>
         <ContentList />
         <TrainingBlock />
         <Modal />
       </div>
-    </div>
-  );
+    </div>)
 }
 
 export default PracticePage;

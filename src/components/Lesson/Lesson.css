@@ -15,7 +15,21 @@
   line-height: 200%;
 }
 
-.image-container {
-  display: flex;
-  justify-content: center;
+.start-button {
+  composes: links from '../../assets/general.css';
+  font-size: 1.4rem;
+  display: block;
+  width: 230px;
+  margin: 30px auto;
+  padding: 14px 30px;
+  background-color: #f1693c;
+  border-radius: 4px;
+  border-bottom: 2px solid rgb(201, 71, 39);
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  transition: all .1s ease-in-out;
+  &:active {
+    background: rgb(201, 71, 39);
+  }
 }

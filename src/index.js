@@ -13,7 +13,7 @@ import OverviewPage from './containers/OverviewPage';
 import PracticePage from './components/PracticePage';
 import ProgressPage from './containers/ProgressPage';
 import Subject from './components/Subject';
-import SubjectPractice from './containers/SubjectPractice';
+import SubjectPractice from './components/SubjectPractice';
 import SubjectOverview from './containers/SubjectOverview';
 import Lesson from './containers/Lesson';
 

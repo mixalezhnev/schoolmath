@@ -4,7 +4,7 @@ import ProgressIcon from '../ProgressIcon';
 
 import styles from './ProgressPage.css';
 
-const Progress = ({ progress, data }) => {
+const ProgressPage = ({ progress, data }) => {
   const { completed, total } = progress;
   const percent = completed * 100 / total ^ 0;
 
@@ -32,7 +32,11 @@ const Progress = ({ progress, data }) => {
               </div>
               <div className={styles.statusContainer}>
                 {subject.lessons.map(lesson =>
-                  <div className={subjects[subject.id] && subjects[subject.id][lesson.id] && subjects[subject.id][lesson.id].completed ? styles.statusCompleted: styles.lessonStatus} key={lesson.id}></div>
+                  <div className={subjects[subject.id] &&
+                    subjects[subject.id][lesson.id] &&
+                    subjects[subject.id][lesson.id].completed ?
+                    styles.statusCompleted :
+                  styles.lessonStatus} key={lesson.id}></div>
                 )}
               </div>
             </div>
@@ -43,4 +47,4 @@ const Progress = ({ progress, data }) => {
   );
 }
 
-export default Progress;
+export default ProgressPage;
