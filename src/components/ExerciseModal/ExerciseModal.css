@@ -25,7 +25,6 @@
   background: white;
   align-self: center;
   position: relative;
-  border-radius: 5px;
 }
 
 .header {
@@ -156,7 +155,7 @@
 .error-message {
   composes: message;
   background: url(./try-again.svg) no-repeat;
-  animation: shake .7s ease-in-out 1;
+  animation: shake .2s ease-in-out 1;
   background-size: 30px 30px;
   background-position: 5px center;
 }
@@ -183,6 +182,7 @@
   .main {
     height: 90%;
     width: 60%;
+    border-radius: 5px;
   }
 
   .title {

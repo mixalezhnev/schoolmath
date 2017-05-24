@@ -5,8 +5,11 @@ import {
   GET_EXERCISE_FAILURE,
   UPDATE_EXERCISE_SUCCESS,
   UPDATE_EXERCISE_FAILURE,
-  COMPLETE_LESSON_SUCCESS
+  COMPLETE_LESSON_SUCCESS,
+  SYNC_EXERCISES
 } from '../constants/practice';
+
+import { objToArray } from '../../ulits';
 
 const initialState = {
   modalState: false,
@@ -35,11 +38,12 @@ const practice = (state = initialState, action) => {
         finished: false,
         isFetching: true
       }
-    case GET_EXERCISE_SUCCESS:
+    case GET_EXERCISE_SUCCESS: {
+      const { data } = action.payload;
       return {
         ...state,
         isFetching: false,
-        exercises: action.payload.map((ex) => {
+        exercises: data.map((ex) => {
           if (!ex.completed)
             return {
               ...ex,
@@ -48,6 +52,7 @@ const practice = (state = initialState, action) => {
           }),
           completed: false
       }
+    }
     case GET_EXERCISE_FAILURE:
       return {
         ...state,
@@ -79,6 +84,16 @@ const practice = (state = initialState, action) => {
         ...state,
         completed: true,
         finished: true
+      }
+    case SYNC_EXERCISES:
+      return {
+        ...state,
+        exercises: state.exercises.map(ex => ({
+          ...ex,
+          completed: action.payload[ex.id].completed
+        })
+
+        )
       }
     default:
       return state;

@@ -3,11 +3,21 @@ import {createStore, applyMiddleware,} from 'redux';
 import {browserHistory} from 'react-router';
 
 import logger from 'redux-logger';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
+import {processExercises} from './middlewares/index.js';
 import {routerMiddleware} from 'react-router-redux';
 
 export default initialState => {
-  const middleware = routerMiddleware(browserHistory);
+	const middleware = routerMiddleware(browserHistory);
 
-  return createStore(rootReducer, initialState, applyMiddleware(thunk, logger, middleware));
+	return createStore(
+		rootReducer,
+		initialState,
+		applyMiddleware(
+			thunk,
+			logger,
+			middleware,
+			processExercises
+			)
+		);
 }

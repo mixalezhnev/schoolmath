@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { bindActionCreators } from 'redux';
-import { toggleModal, updateExercise, finishLesson } from '../store/actions/practice';
+import { toggleModal, updateExercise } from '../store/actions/practice';
 import { completeLesson } from '../store/actions/practice';
 
 import { connect } from 'react-redux';

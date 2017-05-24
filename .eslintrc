@@ -15,17 +15,18 @@
 		"strict": 0,
 		"no-underscore-dangle": 0,
 		"no-use-before-define": 0,
+		"no-mixed-spaces-and-tabs": 0,
 		"eol-last": 0,
 		"quotes": [
 			0,
 			"single"
 		],
 		"jsx-quotes": [
-			1,
+			0,
 			"prefer-single"
 		],
 		"react/jsx-uses-react": 1,
 		"react/jsx-uses-vars": 1,
-		"no-unused-vars": 1
+		"no-unused-vars": 0
 	}
 }

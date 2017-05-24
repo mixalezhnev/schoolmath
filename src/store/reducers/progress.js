@@ -1,13 +1,6 @@
-import {
-  GET_PROGRESS_SUCCESS,
-  GET_PROGRESS_FAILURE,
-  UPDATE_PROGRESS
-} from '../constants/progress';
+import {GET_PROGRESS_SUCCESS, GET_PROGRESS_FAILURE, UPDATE_PROGRESS} from '../constants/progress';
 
-import {
-  COMPLETE_LESSON_SUCCESS,
-  COMPLETE_LESSON_FAILURE
-} from '../constants/practice';
+import {COMPLETE_LESSON_SUCCESS, COMPLETE_LESSON_FAILURE, UPDATE_EXERCISE_SUCCESS } from '../constants/practice';
 
 import {findNotCompleted, getTotal, getCompleted,} from '../../ulits';
 
@@ -41,8 +34,37 @@ const progress = (state = initialState, action) => {
         ...state,
         error: action.payload
       }
-    case COMPLETE_LESSON_SUCCESS: {
-      const {lesson, subject} = action.payload;
+    case COMPLETE_LESSON_SUCCESS:
+      {
+        const {lesson, subject} = action.payload;
+        return {
+          ...state,
+          data: {
+            ...state.data,
+            subjects: {
+              ...state.data.subjects,
+              [subject]: {
+                ...state.data.subjects[subject],
+                [lesson]: {
+                  ...state.data.subjects[subject][lesson],
+                  completed: true
+                }
+              }
+            }
+          }
+        }
+      }
+    case UPDATE_PROGRESS:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          completed: getCompleted(state.data.subjects),
+          next: findNotCompleted(state.data.subjects)
+        }
+      }
+    case UPDATE_EXERCISE_SUCCESS: {
+      const { lesson, subject, id } = action.payload;
       return {
         ...state,
         data: {
@@ -53,21 +75,16 @@ const progress = (state = initialState, action) => {
               ...state.data.subjects[subject],
               [lesson]: {
                 ...state.data.subjects[subject][lesson],
-                completed: true
+                [id]: {
+                  ...state.data.subjects[subject][lesson][id],
+                  completed: true
+                }
               }
             }
           }
         }
       }
     }
-    case UPDATE_PROGRESS:
-      return {
-        ...state,
-        data: {
-          ...state.data,
-          completed: getCompleted(state.data.subjects)
-        }
-      }
     default:
       return state;
   }

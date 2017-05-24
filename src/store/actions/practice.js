@@ -2,6 +2,7 @@ import {
 	TOGGLE_MODAL,
   GET_EXERCISE_REQUEST,
   GET_EXERCISE_SUCCESS,
+  POST_GET_EXERCISE_SUCCESS,
   GET_EXERCISE_FAILURE,
   UPDATE_EXERCISE_SUCCESS,
   UPDATE_EXERCISE_FAILURE,
@@ -22,10 +23,20 @@ const getExerciseRequest = (title) => ({
   payload: title
 })
 
-const getExerciseSuccess = (snapshot) => ({
+const getExerciseSuccess = ({ snapshot }) => ({
 	type: GET_EXERCISE_SUCCESS,
-	payload: snapshot.val()
+	payload: {
+    data: snapshot.val()
+  }
 });
+
+export const postGetExerciseSuccess = ({ subject, lesson }) => ({
+  type: POST_GET_EXERCISE_SUCCESS,
+  payload: {
+    subject,
+    lesson
+  }
+})
 
 const getExerciseFailure = (e) => ({
 	type: GET_EXERCISE_FAILURE,
@@ -42,7 +53,8 @@ export const listenToExercise = ({subject, lesson, title}) =>
 
 			const snapshot = await ref.once('value');
 
-			dispatch(getExerciseSuccess(snapshot));
+			dispatch(getExerciseSuccess({ snapshot }));
+      dispatch(postGetExerciseSuccess({subject, lesson}))
 		} catch (err) {
 			dispatch(getExerciseFailure(err));
 		}

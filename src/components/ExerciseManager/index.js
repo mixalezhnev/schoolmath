@@ -4,7 +4,7 @@ import styles from './ExerciseManager.css';
 
 const ExerciseManager = ({ exercise })  => (
   <div className={styles.container}>
-    <section className={styles.content}>{exercise.question}</section>
+    <section className={styles.content}>{exercise && exercise.question}</section>
   </div>
   );
 
