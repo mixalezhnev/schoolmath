@@ -22,12 +22,15 @@ const OverviewProgress = ({ percentage, next }) => {
 					<div>
             <span className={styles.missionAction}>{isStart ? 'Начать' : 'Продолжить'} миссию</span>
 						<div className={styles.missionNext}>
-							<span>Следующее задание: {next}</span>
+							<p className={styles.next}>Следующее задание:</p>
+              <p className={styles.nextTitle}>{next}</p>
 						</div>
 					</div>
-					<Link to='/practice'>
-						<Button inner='Старт' />
-					</Link>
+					<div className={styles.btnGroup}>
+						<Link to='/practice'>
+							<button className={styles.btn}>Старт</button>
+						</Link>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { setCorrect } from '../store/actions/practice';
 
-import TestExercise from '../components/TestExercise';
+import QuestionExercise from '../components/QuestionExercise';
 
-class TestExerciseContainer extends Component {
+class QuestionExerciseContainer extends Component {
 
   static propTypes = {
 
@@ -17,38 +17,38 @@ class TestExerciseContainer extends Component {
     super(props);
 
     this.state = {
-      selectedValue: null
+      value: ''
     };
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.exercise.id != this.props.exercise.id)
       this.setState({
-        selectedValue: null
+        value: ''
       });
+    this.input.focus();
   }
-
 
   onChange = (e) => {
-    const selectedValue = e.target.value;
+    const value = e.target.value;
 
     this.setState({
-      selectedValue
+      value
     });
 
-    this.checkAnswer(selectedValue);
+    this.checkAnswer(value);
   }
 
-  checkAnswer(index) {
-    this.props.setCorrect(index == this.props.exercise.answer);
+  checkAnswer(answer) {
+    this.props.setCorrect(answer == this.props.exercise.answer);
   }
 
   render() {
     return (
-      <TestExercise variants={this.props.exercise.variants}
-        finished={this.props.finished}
+      <QuestionExercise {...this.props}
+        {...this.state}
         onChange={this.onChange}
-        selected={this.state.selectedValue}/>
+        inputRef={el => this.input = el}/>
     );
   }
 
@@ -64,4 +64,4 @@ const mapDispatchToProps = dispatch => ({
   }, dispatch)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(TestExerciseContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionExerciseContainer);

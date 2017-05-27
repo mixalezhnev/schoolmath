@@ -16,7 +16,7 @@ const paths = [
   },
 ];
 
-const Home = ({children}) => (
+const Home = ({ children }) => (
   <div>
     <Header flag='home'/>
     <Navigation pages={paths}/>

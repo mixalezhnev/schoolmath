@@ -1,27 +1,58 @@
 .search-form {
   position: relative;
-}
-
-.search-icon {
-  width: 20px;
-  height: 20px;
-  background: url('./search.svg');
-  position: absolute;
-  right: 20px;
-  top: 10px;
+  height: 35px;
 }
 
 .search-input {
 	composes: primary-font-size from '../../assets/typography.css';
 	composes: inputs from '../../assets/general.css';
-	width: 100%;
+  background: #228DB9;
+  color: gray;
+  width: 100px;
   height: 100%;
-	padding: 10px 40px 10px 10px;
-  border-radius: 10px;
-  transition: width .2s ease-in-out;
+	padding: 10px;
+  border-radius: 5px;
+  transition: background .1s ease-out;
+  &:focus {
+    background: white;
+  }
+  &:focus + .btn {
+    background-image: url(./active.svg);
+  }
+}
+
+::-webkit-input-placeholder {
+  color: color(white a(65%));
+  transition: color .1s ease-out;
+}
+
+:focus::-webkit-input-placeholder {
+  color: gray;
+}
+
+.btn {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  right: 10px;
+  top: 10px;
+  border: none;
+  background: url(./inactive.svg) no-repeat;
 }
 
 .bordered-input {
   composes: search-input;
   border: 2px solid var(--subject-bg-color);
+}
+
+@media only screen and (width > 320px) {
+  .search-input {
+    width: 200px;
+  }
+}
+
+@media only screen and (width >= 768px) {
+  .search-input {
+    width: 300px;
+  }
 }

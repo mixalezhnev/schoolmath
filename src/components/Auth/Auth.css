@@ -1,3 +1,5 @@
+$sign-in-bg: #91DC5A;
+
 .profile {
 
 }
@@ -15,9 +17,15 @@
 	composes: primary-font-family from '../../assets/typography.css';
   display: block;
   padding: 5px 10px;
-  border: 2px solid #91DC5A;
+  border: 2px solid $sign-in-bg;
   border-radius: 10px;
-  color: #91DC5A;
+  color: $sign-in-bg;
+  transition: all .1s ease-out;
+}
+
+.sign-in-link:hover {
+  color: white;
+  background: $sign-in-bg;
 }
 
 .sign-in-link-alt {

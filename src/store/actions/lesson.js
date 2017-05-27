@@ -10,7 +10,7 @@ export const listenToLesson = (id) => async dispatch => {
   try {
     dispatch(getLessonRequest());
 
-    const json = await fetch(`https://api.cosmicjs.com/v1/schoolmath/object/${id}`);
+    const json = await fetch(`https://api.cosmicjs.com/v1/kidsmath/object/${id}`);
     const data = await json.json();
 
     dispatch(getLessonSuccess(data.object));

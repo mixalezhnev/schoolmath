@@ -7,7 +7,6 @@
   composes: list from '../../assets/general.css';
   composes: primary-font-size from '../../assets/typography.css';
   composes: primary-font-family from '../../assets/typography.css';
-  columns: 2;
 }
 
 .anchor {
@@ -32,6 +31,12 @@
 .heading {
   composes: headings from '../../assets/general.css';
   margin: 0 0 9px 10px;
+}
+
+@media only screen and (width > 320px) {
+  .list {
+    columns: 2;
+  }
 }
 
 @media only screen and (width >= 768px){

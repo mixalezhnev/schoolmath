@@ -15,10 +15,11 @@ class LessonComplete extends Component{
 
     return(
       <div className={styles.container}>
-        <div className={styles.completeIcon}></div>
         <section className={styles.completeMessage}>
-          Урок завершен!
-        </section></div>
+          <div className={styles.completeIcon}></div>
+          <span>Урок завершен!</span>
+        </section>
+      </div>
     )
   }
 }

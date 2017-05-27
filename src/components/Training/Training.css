@@ -27,7 +27,7 @@
 
 .lesson {
   display: flex;
-  border-top: 1px solid color(gray a(75%));
+  border-top: 1px solid color(gray a(15%));
   padding: 15px 0;
 }
 
@@ -58,7 +58,7 @@
 
   .title {
     composes: primary-color from '../../assets/colors.css';
-    composes: largest-font-size from '../../assets/typography.css';
+    composes: middle-font-size from '../../assets/typography.css';
   }
 
   .lesson {

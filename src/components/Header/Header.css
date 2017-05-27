@@ -1,6 +1,6 @@
 .header {
 	composes: content-block-padding from '../../assets/layout.css';
-  background: #044389;
+  background: #29ACE2;
 }
 
 .transparent {
@@ -34,16 +34,20 @@
   height: 100%;
 }
 
-@media only screen and (width >= 768px) {
-  .logo {
-    height: 40px;
-    width: 40px;
-  }
+@media only screen and (width => 320px) {
+	.logo {
+		height: 40px;
+		width: 40px;
+	}
 }
 
-@media only screen and (width >= 1200px) {
+@media only screen and (width >= 768px) {
   .logo {
     height: 50px;
     width: 50px;
   }
+}
+
+@media only screen and (width >= 1200px) {
+
 }

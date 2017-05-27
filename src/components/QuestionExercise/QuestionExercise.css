@@ -1,0 +1,19 @@
+.container {
+	composes: primary-font-size from '../../assets/typography.css';
+}
+
+.input {
+  composes: secondary-font-size from '../../assets/typography.css';
+  padding: 5px;
+  height: 40px;
+  width: 80px;
+  margin-top: 10px
+}
+
+.pre-answer {
+  margin-right: 5px;
+}
+
+.post-answer {
+  margin-left: 5px;
+}

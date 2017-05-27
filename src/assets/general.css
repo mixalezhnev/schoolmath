@@ -7,17 +7,16 @@
 	composes: smallest-font-size from './typography.css';
 	composes: primary-font-family from './typography.css';
 	color: white;
-	background: deepskyblue;
+	background: #83BF65;
 	cursor: pointer;
 	border: none;
 	padding: 5px 10px;
 }
 
 .inputs {
-	height: 40px;
-  width: 200px;
-  outline: none;
   border: none;
+  display: inline-block;
+  outline: none;
 }
 
 .list {

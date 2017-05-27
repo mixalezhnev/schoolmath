@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import FaClose from 'react-icons/lib/md/close';
 import ExerciseManager from '../ExerciseManager';
 import ModalStatusBar from './../ModalStatusBar';
 import LessonComplete from '../LessonComplete';
 
 import styles from './ExerciseModal.css';
+import FaClose from 'react-icons/lib/md/close';
 import exerciseComplete from './exercise-complete.wav';
 import lessonComplete from './lesson-complete.mp3';
 
@@ -22,23 +22,29 @@ class ExerciseModal extends Component {
    }
 
    componentWillReceiveProps(nextProps) {
-     if (nextProps.practice.finished)
+     if (nextProps.practice.lessonFinished)
        this.completeSound.play();
    }
 
+   handleKeyPress = (e) => {
+    const {exerciseFinished, lessonFinished} = this.props.practice;
+    if (e.key == 'Enter')
+      if (exerciseFinished)
+        this.nextBtn.click();
+      else 
+        this.checkBtn.click();
+        
+   }
+
   checkAnswer = () => {
-      const value = this.answerInput.value;
+    const { isCorrectAnswer } = this.props.practice;
 
-      if (!value.trim()) {
-        alert('Введите ваш ответ');
-        return;
-      }
-
-      if (value == this.props.curExercise.answer) {
-        this.sound.play();
-        this.setState({
-          correctMessageState: true,
-          wrongMessageState: false
+    if (isCorrectAnswer) {
+      this.sound.play();
+      this.props.finishExercise();
+      this.setState({
+        correctMessageState: true,
+        wrongMessageState: false
         });
       } else {
         this.setState({
@@ -54,8 +60,6 @@ class ExerciseModal extends Component {
         correctMessageState: false,
         wrongMessageState: false
       });
-
-      this.answerInput.value = '';
 
       this.props.getNext({
         id: this.props.curExercise.id,
@@ -73,44 +77,58 @@ render() {
   window.document.body.style.overflow = practice.modalState ?  'hidden' : '';
 
   return (
-    <div className={practice.modalState ? styles.visible : styles.hidden}>
+    <div
+      className={practice.modalState ? styles.visible : styles.hidden}
+      onKeyPress={this.handleKeyPress}
+      >
       <main className={styles.main}>
-        <div className={styles.header}>
+        <section className={styles.header}>
           <div className={styles.close}>
-            <FaClose size={30} className={styles.closeIcon}
-              onClick={toggleModal}/>
+            <div className={styles.closeIcon}
+              onClick={toggleModal}>
+            </div>
           </div>
           <div>
             <h2 className={styles.title}>{practice.title}</h2>
           </div>
-        </div>
+        </section>
         <section className={styles.playground}>
           {practice.completed ? <LessonComplete/> :
             <div className={styles.content}>
               {practice.exercises.length > 0 &&
                 <ExerciseManager exercise={curExercise}/>
               }
-              <div>
-                {curExercise && curExercise.preanswer && <span className={styles.preAnswer}>{curExercise.preanswer}</span>}
-                <input ref={ input => this.answerInput = input} disabled={this.state.correctMessageState} className={styles.input}/>
-                <span className={styles.postAnswer}>{curExercise && curExercise.postanswer}</span>
-              </div>
-              {this.state.correctMessageState ?
-                <div className={styles.correctMessage}>
-                  Правильный ответ!
-                </div> :
-                  this.state.wrongMessageState ? <div className={styles.errorMessage}>Попробуйте еще раз</div>
-              : null }
             </div>
           }
         </section>
         <footer className={styles.footer}>
           <ModalStatusBar exercises={practice.exercises}/>
-          {this.state.correctMessageState ?
-            <button className={styles.check} onClick={this.switchExercise}>Следующее задание</button> :
-              practice.completed ? <button className={styles.check} onClick={toggleModal}>Завершить урок</button> :
-            <button className={styles.check} onClick={this.checkAnswer}>Проверить</button>
-          }
+          <div className={styles.checkBtn}>
+            {this.state.correctMessageState ?
+              <div className={styles.correctMessage}>
+              Правильный ответ!
+              </div> :
+              this.state.wrongMessageState ? <div className={styles.errorMessage}>Попробуйте еще раз</div>
+              : null }
+              {this.state.correctMessageState ?
+                <button className={styles.check}
+                  onClick={this.switchExercise}
+                  ref={button => this.nextBtn = button}>
+                    Следующее задание
+                </button> :
+                practice.completed ?
+                  <button 
+                    ref={button => this.endBtn = button}
+                    className={styles.check} 
+                    onClick={toggleModal}>
+                    Завершить урок
+                  </button> :
+                <button 
+                  ref={button => this.checkBtn = button}
+                  className={styles.check}
+                  onClick={this.checkAnswer}>Проверить</button>
+              }
+            </div>  
         </footer>
       </main>
     </div>

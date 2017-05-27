@@ -1,10 +1,13 @@
+$height: 20vh;
+$message-bg: #dddddd;
+
 .container {
   position: fixed;
   left: 0;
   height: 100vh;
   width: 100vw;
   background: color(black a(65%));
-  transition: top .2s linear;
+  /*transition: top .2s linear;*/
   display: flex;
   justify-content: center;
 }
@@ -28,12 +31,10 @@
 }
 
 .header {
-  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 10%;
-  max-height: 80px;
+  justify-content: center;
+  height: $height;
   border-bottom: 1px solid color(black a(75%));
 }
 
@@ -44,7 +45,10 @@
 }
 
 .close-icon {
-  color: color(gray a(80%));
+  background: url(./close.svg) no-repeat;
+  background-size: cover;
+  height: 10px;
+  width: 10px;
   transition: transform .3s ease-in-out;
 }
 
@@ -54,19 +58,18 @@
 
 .title {
   composes: primary-font-family from '../../assets/typography.css';
-  composes: primary-font-size from '../../assets/typography.css';
-  padding-left: 10px;
   color: color(black a(75%));
-  /*composes: secondary-font-size from '../../assets/typography.css';*/
+  margin-left: 30px;
+  font-size: 14px;
 }
 
 .playground {
-  height: 80%;
+  height: 60vh;
+  overflow: auto;
 }
 
 .content {
   composes: primary-font-family from '../../assets/typography.css';
-  composes: largest-font-size from '../../assets/typography.css';
   padding: 20px;
 }
 
@@ -75,7 +78,7 @@
   padding: 5px;
   height: 40px;
   width: 80px;
-  margin-top: 10px
+  margin-top: 10px;
 }
 
 .pre-answer {
@@ -87,11 +90,8 @@
 }
 
 .footer {
-  height: 10%;
-  max-height: 80px;
+  height: $height;
   width: 100%;
-  position: absolute;
-  bottom: 0;
   border-top: 1px solid color(black a(75%));
   display: flex;
   align-items: center;
@@ -99,29 +99,35 @@
   padding: 0 20px;
 }
 
+.checkBtn {
+  height: 80%;
+  min-width: 150px;
+  position: relative;
+}
+
 .check {
   composes: buttons from '../../assets/general.css';
   composes: primary-font-familry from '../../assets/typography.css';
   composes: secondary-font-size from '../../assets/typography.css';
-  height: 80%;
+  height: 100%;
   text-transform: uppercase;
   font-weight: lighter;
   background: #7FC054;
   border-radius: 5px;
-  padding: 0 30px;
+  text-align: center;
+  width: 100%;
 }
 
 .message {
   composes: primary-font-family from '../../assets/typography.css';
   position: absolute;
-  right: 20px;
-  bottom: 100px;
+  right: 0;
+  bottom: 150%;
   padding: 10px 10px 10px 40px;
-  border: 2px solid gray;
   border-radius: 5px;
 }
 
-.message::after {
+.message:after {
   display: block;
   content: '';
   position: absolute;
@@ -130,31 +136,19 @@
   width: 20px;
   height: 20px;
   transform: rotate(45deg);
-  border-right: 2px solid gray;
-  border-bottom: 2px solid gray;
-}
-
-.message::before {
-  display: block;
-  content: '';
-  width: 28px;
-  height: 3px;
-  border-bottom: 3px solid white;
-  position: absolute;
-  bottom: -2px;
-  right: 16px;
+  background: $message-bg;
 }
 
 .correct-message {
   composes: message;
-  background: url(./smiling.svg) no-repeat;
+  background: url(./smiling.svg) no-repeat, $message-bg;
   background-size: 30px 30px;
   background-position: 5px center;
 }
 
 .error-message {
   composes: message;
-  background: url(./try-again.svg) no-repeat;
+  background: url(./try-again.svg) no-repeat, $message-bg;
   animation: shake .2s ease-in-out 1;
   background-size: 30px 30px;
   background-position: 5px center;
@@ -178,7 +172,50 @@
   }
 }
 
+@media only screen and (width > 320px) {
+  .close-icon {
+    height: 15px;
+    width: 15px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (height > 320px) {
+  .playground {
+    height: 80vh;
+  }
+
+  .header, .footer {
+    height: 10vh;
+  }
+}
+
+@media only screen and (width >= 768px) {
+  .close-icon {
+    height: 20px;
+    width: 20px;
+  }
+
+}
+
 @media only screen and (width >= 1024px) {
+  .header, .footer {
+    height: 10%;
+    min-height: 90px;
+  }
+
+  .playground {
+    height: 80%;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+  }
+
   .main {
     height: 90%;
     width: 60%;
@@ -186,6 +223,6 @@
   }
 
   .title {
-    composes: largest-font-size from '../../assets/typography.css';
+    font-size: 24px;
   }
 }

@@ -13,7 +13,7 @@ const Lesson = ({ lesson, params }) => {
     <div className={styles.container}>
       <h1 className={styles.title}>{title}</h1>
       <div dangerouslySetInnerHTML={createHTML(content)} className={styles.content}></div>
-      <Link to={`/`} className={styles.startButton}>Закрепить урок</Link>
+      <Link to={`/subject/${params.subject}/practice`} className={styles.startButton}>Закрепить урок</Link>
     </div>
   );
 }

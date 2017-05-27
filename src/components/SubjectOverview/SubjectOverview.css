@@ -3,11 +3,15 @@
 }
 
 .big-title {
-  height: 300px;
+  height: 200px;
   background: linear-gradient(140deg,#009688 10%,#4587bb 90%);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.titleGroup {
   position: relative;
 }
 
@@ -18,13 +22,17 @@
   display: flex;
   color: color(white a(60%));
   text-transform: uppercase;
-  transition: text-indent .2s ease-in-out;
   position: absolute;
-  top: 110px;
+  top: -20px;
+  left: calc(50% - 75px);
 }
 
-.link-back:hover {
-  text-indent: 5px;
+.back-icon {
+  transition: transform .2s ease-out;
+}
+
+.link-back:hover > .back-icon {
+  transform: translateX(-5px);
 }
 
 .back-text {
@@ -32,23 +40,65 @@
 }
 
 .title {
-  composes: very-big-font-size from '../../assets/typography.css';
   composes: primary-font-family from '../../assets/typography.css';
+  font-size: 22px;
+  text-align: center;
+  margin: 0 10px;
   color: white;
-  /*text-shadow: -3px 2px 5px rgba(150, 150, 150, 1);*/
 }
 
 .flex {
   display: flex;
+  flex-direction: column;
 }
 
 .desc {
   flex: 3;
+  margin-bottom: 20px;
 }
 
 .desc-text {
   composes: primary-font-family from '../../assets/typography.css';
   composes: secondary-font-size from '../../assets/typography.css';
-  padding-left: 30px;
   line-height: 24px;
+  text-indent: 1em;
+  text-align: justify;
+}
+
+@media only screen and (width >= 321px){
+  .big-title {
+    height: 250px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (width >= 768px) {
+  .big-title {
+    height: 300px;
+  }
+
+  .flex {
+    flex-direction: row;
+  }
+
+  .desc-text {
+    padding-left: 30px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (width >= 1200px) {
+  .big-title {
+    height: 350px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
 }

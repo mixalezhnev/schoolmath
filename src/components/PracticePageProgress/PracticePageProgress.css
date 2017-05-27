@@ -26,11 +26,16 @@ $main-padding: 15px;
   margin-bottom: 10px;
 }
 
+.next {
+  color: gray;
+}
+
 .start-btn {
   composes: buttons from '../../assets/general.css';
   position: absolute;
   top: $main-padding;
   right: $main-padding;
+  visibility: hidden;
 }
 
 .progress {
@@ -43,7 +48,7 @@ $main-padding: 15px;
 .bar {
   height: 100%;
   width: 0;
-  background: deepskyblue;
+  background: #7AC74F;
 }
 
 .details {
@@ -51,4 +56,10 @@ $main-padding: 15px;
   composes: smallest-font-size from '../../assets/typography.css';
   composes: secondary-color from '../../assets/colors.css';
   text-align: center;
+}
+
+@media only screen and (width > 320px) {
+  .start-btn {
+    visibility: visible;
+  }
 }

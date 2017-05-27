@@ -10,12 +10,14 @@
 .complete-message {
   composes: complete-font-family from '../../assets/typography.css';
   composes: very-big-font-size  from '../../assets/typography.css';
+  position: relative;
 }
 
 .complete-icon {
   position: absolute;
   height: 70px;
   width: 70px;
-  top: 35%;
+  left: calc(50% - 35px);
+  top: -60px;
   background: url(./complete.svg) no-repeat;
 }

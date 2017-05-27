@@ -6,7 +6,9 @@ import {
   UPDATE_EXERCISE_SUCCESS,
   UPDATE_EXERCISE_FAILURE,
   COMPLETE_LESSON_SUCCESS,
-  SYNC_EXERCISES
+  SYNC_EXERCISES,
+  SET_CORRECT,
+  FINISH_EXERCISE
 } from '../constants/practice';
 
 import { objToArray } from '../../ulits';
@@ -18,9 +20,11 @@ const initialState = {
   lesson: '',
   exercises: [],
   completed: false,
-  finished: false,
+  lessonFinished: false,
+  exerciseFinished: false,
   isFetching: false,
   error: null,
+  isCorrectAnswer: false
 };
 
 const practice = (state = initialState, action) => {
@@ -29,13 +33,13 @@ const practice = (state = initialState, action) => {
       return {
         ...state,
         modalState: !state.modalState,
-        finished: state.modalState ? false : state.finished
+        lessonFinished: state.modalState ? false : state.lessonFinished
       }
     case GET_EXERCISE_REQUEST:
       return {
         ...state,
         ...action.payload,
-        finished: false,
+        lessonFinished: false,
         isFetching: true
       }
     case GET_EXERCISE_SUCCESS: {
@@ -72,6 +76,8 @@ const practice = (state = initialState, action) => {
               }
             return ex;
           }),
+          isCorrectAnswer: false,
+          exerciseFinished: false
         }
       }
     case UPDATE_EXERCISE_FAILURE:
@@ -83,7 +89,7 @@ const practice = (state = initialState, action) => {
       return {
         ...state,
         completed: true,
-        finished: true
+        lessonFinished: true
       }
     case SYNC_EXERCISES:
       return {
@@ -94,6 +100,16 @@ const practice = (state = initialState, action) => {
         })
 
         )
+      }
+    case SET_CORRECT:
+      return {
+        ...state,
+        isCorrectAnswer: action.payload
+      }
+    case FINISH_EXERCISE:
+      return {
+        ...state,
+        exerciseFinished: true
       }
     default:
       return state;

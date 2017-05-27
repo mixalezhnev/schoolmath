@@ -4,6 +4,7 @@
 
 .title {
   composes: primary-font-family from '../../assets/typography.css';
+  composes: secondary-font-size from '../../assets/typography.css';
   font-weight: lighter;
   margin-bottom: 15px;
   border-top: 1px solid gray;
@@ -31,5 +32,17 @@
   transition: all .1s ease-in-out;
   &:active {
     background: rgb(201, 71, 39);
+  }
+}
+
+@media only screen and (width >= 321px) {
+  .title {
+    composes: medium-font-size from '../../assets/typography.css';
+  }
+}
+
+@media only screen and (width => 768px) {
+  .title {
+    composes: header-level-1 from '../../assets/typography.css';
   }
 }

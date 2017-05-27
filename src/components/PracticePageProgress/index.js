@@ -9,18 +9,18 @@ import styles from './PracticePageProgress.css';
 
   return (
     <div className={styles.container}>
-      <main className={styles.main}>
+      <div className={styles.main}>
         <div className={styles.missionAction}>
-          <span>{
+          <p className={styles.action}>{
               isStart ?
                 'Начать миссию' :
                 isFinish ?
                   'Миссия завершена' :
           'Продолжить миссию'}
-          </span>
+          </p>
         </div>
         <div className={styles.missionNext}>
-          <span>
+          <span className={styles.next}>
             Следующее задание: {nextTitle}
           </span>
         </div>
@@ -33,7 +33,7 @@ import styles from './PracticePageProgress.css';
         <div className={styles.details}>
           {completed} / {total} заданий завершено
         </div>
-      </main>
+      </div>
     </div>
   );
 }

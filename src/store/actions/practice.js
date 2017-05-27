@@ -7,7 +7,9 @@ import {
   UPDATE_EXERCISE_SUCCESS,
   UPDATE_EXERCISE_FAILURE,
   COMPLETE_LESSON_SUCCESS,
-	COMPLETE_LESSON_FAILURE
+	COMPLETE_LESSON_FAILURE,
+  SET_CORRECT,
+  FINISH_EXERCISE
 } from '../constants/practice';
 
 import { updateProgress } from './progress';
@@ -115,3 +117,12 @@ export const completeLesson = ({ lesson, subject }) =>
       dispatch(completeLessonFailure(e));
     }
   }
+
+  export const setCorrect = isCorrect => ({
+    type: SET_CORRECT,
+		payload: isCorrect
+  })
+
+  export const finishExercise = () => ({
+    type: FINISH_EXERCISE
+  })

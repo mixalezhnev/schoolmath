@@ -1,0 +1,25 @@
+.banner {
+  height:  150px;
+  background: url(https://www.ed2go.com/common/images/1/16500/math-class.jpg), #29ACE2;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+@media only screen and (width >= 321px) {
+  .banner {
+    height: 250px;
+  }
+}
+
+@media only screen and (width >= 768px) {
+  .banner {
+    height: 400px;
+  }
+}
+
+@media only screen and (width >= 1200px) {
+  .banner {
+    height: 600px;
+  }
+}

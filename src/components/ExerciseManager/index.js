@@ -1,11 +1,32 @@
 import React from 'react';
 
+import QuestionExercise from '../../containers/QuestionExercise';
+import TestExercise from '../../containers/TestExercise';
+
 import styles from './ExerciseManager.css';
 
-const ExerciseManager = ({ exercise })  => (
+const ExerciseManager = ({ exercise })  => {
+  let targetComponent;
+
+  if (exercise) {
+    switch(exercise.type) {
+      case 'test':
+        targetComponent = <TestExercise exercise={exercise} />;
+        break;
+      case 'text':
+        targetComponent = <QuestionExercise exercise={exercise} />;
+        break;
+      default:
+        targetComponent = <QuestionExercise exercise={exercise}/>;
+    }
+  }
+  
+  return (
   <div className={styles.container}>
-    <section className={styles.content}>{exercise && exercise.question}</section>
+    <p className={styles.question}>{exercise && exercise.question}</p>
+    {targetComponent}
   </div>
   );
+}
 
 export default ExerciseManager;

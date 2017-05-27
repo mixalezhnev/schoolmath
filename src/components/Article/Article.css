@@ -26,8 +26,8 @@
 .description {
 	composes: primary-font-size from '../../assets/typography.css';
 	composes: primary-font-family from '../../assets/typography.css';
-	text-align: justify;
-  line-height: 22px;
+	text-align: left;
+  line-height: 25px;
 }
 
 .lessons {

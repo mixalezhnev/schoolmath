@@ -11,10 +11,10 @@
 }
 
 .active-link {
-	color: deepskyblue;
+	color: var(--main-color);
 	opacity: 1;
 	font-weight: bold;
-  border-bottom: 4px solid deepskyblue;
+  border-bottom: 4px solid var(--main-color);
 }
 
 .active-link-alt {

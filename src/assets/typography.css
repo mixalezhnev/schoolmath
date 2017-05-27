@@ -24,8 +24,7 @@
 }
 
 .primary-font-family {
-	/*font-family: 'Open Sans Light';*/
-	font-family: 'PT Sans';
+	font-family: 'PT Sans', sans-serif;
 }
 
 .secondary-font-family {
@@ -52,8 +51,20 @@
 	font-size: 18px;
 }
 
-.largest-font-size {
+.medium-font-size {
 	font-size: 20px;
+}
+
+.largest-font-size {
+	font-size: 22px;
+}
+
+.header-level-2 {
+	font-size: 26px;
+}
+
+.header-level-1 {
+	font-size: 2em;
 }
 
 .very-big-font-size {

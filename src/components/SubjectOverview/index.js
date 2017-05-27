@@ -19,11 +19,13 @@ const SubjectOverview = ({data, children, params}) => {
   return (
     <div>
       <div className={styles.bigTitle}>
-        <Link to='/' className={styles.linkBack}>
-          <FaBack size={24}/>
-          <span className={styles.backText}>К обзору разделов</span>
-        </Link>
-        <h2 className={styles.title}>{targetSubject.title}</h2>
+        <div className={styles.titleGroup}>
+          <Link to='/' className={styles.linkBack}>
+            <FaBack size={24} className={styles.backIcon}/>
+            <span className={styles.backText}>К обзору разделов</span>
+          </Link>
+          <h2 className={styles.title}>{targetSubject.title}</h2>
+        </div>
       </div>
       <div className={styles.container}>
         <div className={styles.flex}>

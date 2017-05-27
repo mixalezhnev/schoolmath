@@ -7,6 +7,7 @@
 :root {
   --subject-bg-color: #3E3287;
   --subject-border-color: #FF5964;
+  --main-color: #29ACE2;
 }
 
 :global {
