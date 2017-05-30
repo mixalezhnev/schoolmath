@@ -8,6 +8,9 @@ export const getCircleProgress = (radius, percent = 0) => {
   return {circumference, dasharray};
 }
 
+export const validateEmpty = value => !!value.trim();
+export const validateIdentity = (str1, str2) => str1 === str2;
+
 export const objToArray = (obj) => Object.keys(obj).map(key => obj[key]);
 
 export const createHTML = html => ({__html: html});
@@ -28,13 +31,13 @@ export const getTotal = (obj) => {
   return total;
 }
 
-export const listenToPractice = async() => {
+export const listenToPractice = async () => {
   try {
     const ref = database.ref('practice');
     const snapshot = await ref.once('value');
 
     await auth.signInAnonymously().then(info => {
-      database.ref(`users/${info.uid}`).set({
+      database.ref(`users/${info.uid}/progress`).set({
         ...snapshot.val()
       })
     })

@@ -2,6 +2,7 @@ import React from 'react';
 
 import QuestionExercise from '../../containers/QuestionExercise';
 import TestExercise from '../../containers/TestExercise';
+import DraggableExercise from '../../containers/DraggableExercise';
 
 import styles from './ExerciseManager.css';
 
@@ -15,6 +16,9 @@ const ExerciseManager = ({ exercise })  => {
         break;
       case 'text':
         targetComponent = <QuestionExercise exercise={exercise} />;
+        break;
+      case 'draggable':
+        targetComponent = <DraggableExercise exercise={exercise} />;
         break;
       default:
         targetComponent = <QuestionExercise exercise={exercise}/>;

@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
+import SearchModal from './SearchModal';
 // import Footer from '../components/Footer';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {listenToArticles} from '../store/actions/articles';
-// import {listenToPractice} from '../store/actions/practice';
 
-const mapDispatchToProps = (dispatch) => ({
-  getArticles: bindActionCreators(listenToArticles, dispatch)
+const mapDispatchToProps = dispatch => ({
+  ...bindActionCreators({
+    getArticles: listenToArticles
+  }, dispatch)
 })
 
 class App extends Component {
@@ -21,6 +23,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className='App'>
+        <SearchModal />
         {this.props.children}
 				{/* <Footer /> */}
 			</div>

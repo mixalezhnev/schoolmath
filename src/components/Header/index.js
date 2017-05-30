@@ -1,28 +1,31 @@
 import React from 'react';
-import Auth from '.././Auth';
-import SearchBox from '../SearchBox';
+import Auth from '../Auth';
+import SearchBox from '../../containers/SearchBox';
 
-import {Link} from 'react-router';
+import { Link } from 'react-router';
+import { auth } from '../../firebaseApp';
 
 import styles from './Header.css';
 import logo from './logo.svg';
 
-const Header = ({flag}) => {
-  flag = flag == 'subject';
+const Header = () => {
+  const isAnonymous = !auth.currentUser || auth.currentUser.isAnonymous; 
 
   return (
-    <div className={flag ? `${styles.header} ${styles.transparent}` : styles.header}>
+    <div className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link to='/'>
             <img src={logo} className={styles.logoIcon} alt='Math starts here' />
           </Link>
         </div>
-        <div className={styles.rightBlock}>
-          <div className={styles.searchBox}>
-            <SearchBox bordered={flag}/>
+        <div className={ isAnonymous ? styles.rightBlock : styles.reversed }>
+          <div className={styles.auth}>
+            <Auth />
           </div>
-          <Auth flag={flag}/>
+          <div className={styles.searchBox}>
+            <SearchBox />
+          </div>
         </div>
       </div>
     </div>

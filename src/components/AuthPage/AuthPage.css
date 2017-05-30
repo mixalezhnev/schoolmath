@@ -1,0 +1,147 @@
+.container {
+  composes: primary-font-family from '../../assets/typography.css';
+  background: #F3F3F3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  min-height: 100%;
+}
+
+.wrapper {
+  max-width: 384px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.action {
+  composes: lora from '../../assets/typography.css';
+  text-align: center;
+  font-weight: normal;
+  color: #6a6a6a;
+  font-size: 28px;
+}
+
+.branding {
+  height: 34px;
+  width: 34px;
+  margin: 10px auto;
+  background: url(./logo.svg) no-repeat;
+}
+
+.google-auth {
+  margin: 0 auto 25px;
+  max-width: 318px;
+  height: 40px;
+  padding: 5px 10px;
+  position: relative;
+  display: flex;
+  font-weight: 400;
+  color: #6a6a6a;
+  border: 1px solid #d0d0d0;
+  border-radius: 7px;
+  align-items: center;
+  justify-content: space-between;
+  &:hover {
+    cursor: pointer;
+  }
+  &:before {
+    display: block;
+    content: '';
+    align-self: center;
+    width: 18px;
+    height: 18px;
+    background: url(./google.svg) no-repeat;
+    color: #6a6a6a;
+  }
+  &:after {
+    display: block;
+    content: 'Войти с аккаунтом Google';
+    font-size: 16px;
+  }
+}
+
+.form {
+  display: block;
+  width: 100%;
+}
+
+.horizontal-line {
+  margin: 25px 0;
+  display: flex;
+  position: relative;
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 1px;
+    width: 100%;
+    align-self: center;
+    background: #ababab;
+  }
+}
+
+.horizontal-text {
+  display: inline-block;
+  margin: 0 auto;
+  color: #ababab;
+  background: #F3F3F3;
+  padding: 0 5px;
+  z-index: 99;
+}
+
+.switch-action {
+  padding: 20px 0;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.switch-question {
+  color: #747474;
+  font-size: .9rem;
+}
+
+.switcher {
+  color: #2dbe60;
+  font-size: 1.1rem;
+}
+
+@media only screen and (width > 320px) {
+  .branding {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media only screen and (width > 768px) {
+  .wrapper-body {
+    padding: 32px;
+    background: white;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+  }
+
+  .horizontal-text {
+    background: white;
+  }
+
+  .branding {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media only sceern and (width > 1200px) {
+  .container {
+    background: url(./bg.png) no-repeat;
+    background-size: cover;
+  }
+}

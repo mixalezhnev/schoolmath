@@ -1,48 +1,30 @@
-.search-form {
+$main-color: #6A6A6A;
+
+.search-trigger {
+  composes: primary-font-family from '../../assets/typography.css';
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 220px;
+  border: 1px solid $main-color;
+  border-radius: 40px;
   position: relative;
-  height: 35px;
-}
-
-.search-input {
-	composes: primary-font-size from '../../assets/typography.css';
-	composes: inputs from '../../assets/general.css';
-  background: #228DB9;
-  color: gray;
-  width: 100px;
-  height: 100%;
-	padding: 10px;
-  border-radius: 5px;
-  transition: background .1s ease-out;
-  &:focus {
-    background: white;
-  }
-  &:focus + .btn {
-    background-image: url(./active.svg);
+  cursor: text;
+  &:before {
+    font-size: 12px;
+    position: absolute;
+    left: 3.75em;
+    color: $main-color;
+    content: 'Поиск...';
   }
 }
 
-::-webkit-input-placeholder {
-  color: color(white a(65%));
-  transition: color .1s ease-out;
-}
-
-:focus::-webkit-input-placeholder {
-  color: gray;
-}
-
-.btn {
-  position: absolute;
+.search-icon {
   height: 15px;
   width: 15px;
-  right: 10px;
-  top: 10px;
-  border: none;
-  background: url(./inactive.svg) no-repeat;
-}
-
-.bordered-input {
-  composes: search-input;
-  border: 2px solid var(--subject-bg-color);
+  background: url(./active.svg) no-repeat;
+  position: absolute;
+  left: 1.25em;
 }
 
 @media only screen and (width > 320px) {

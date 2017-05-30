@@ -4,6 +4,11 @@
 }
 
 @font-face {
+	fotn-family: 'Lora Regular';
+	src: url(./fonts/lora.ttf);
+}
+
+@font-face {
 	font-family: 'Open Sans Light';
 	src: url(./fonts/osl.ttf);
 }
@@ -41,6 +46,10 @@
 
 .complete-font-family {
 	font-family: 'Bad Script';
+}
+
+.lora {
+	font-family: 'Lora Regular';
 }
 
 .primary-font-size {

@@ -1,18 +1,18 @@
-.star {
+.icon {
   composes: svg from '../../assets/general.css';
   min-width: 24px;
   height: 24px;
 }
 
-.completed {
-  fill: deepskyblue;
-}
-
-.not-completed {
+.cup {
   fill: color(gray a(80%));
   transition: fill .2s ease-in-out;
+  &:hover {
+    fill: gray;
+  }
 }
 
-.not-completed:hover {
-  fill: gray;
+.completed {
+  composes: cup;
+  fill: #FF9800;
 }
