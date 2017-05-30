@@ -53,7 +53,7 @@
   left: calc(50% - 60px);
 }
 
-@media only screen and (width > 320px) {
+@media only screen and (width > 420px) {
   .progress {
     flex-direction: row;
     padding: 20px;
