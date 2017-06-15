@@ -98,7 +98,15 @@
     height: 40px;
     width: 40px;
     &:checked:before {
-      font-size: 34px;
+      font-size: 28px;
+    }
+  }
+}
+
+@media only screen and (width > 1368px) {
+  .option {
+    &:checked:before {
+      font-size: 32px;
     }
   }
 }

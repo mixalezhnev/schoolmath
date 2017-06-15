@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SignInForm from '../components/SignInForm';
+import AuthPage from '../components/AuthPage';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { login } from '../store/actions/login';
+import { loginWithGoogle } from '../store/actions/login';
 
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({
-    login
+    loginGoogle: loginWithGoogle
   }, dispatch)
 });
 
-export default connect(null, mapDispatchToProps)(SignInForm);
+export default connect(null, mapDispatchToProps)(AuthPage);

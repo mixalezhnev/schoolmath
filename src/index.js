@@ -17,7 +17,7 @@ import SubjectPractice from './components/SubjectPractice';
 import SubjectOverview from './containers/SubjectOverview';
 import Lesson from './containers/Lesson';
 
-import AuthPage from './components/AuthPage';
+import AuthPage from './containers/AuthPage';
 import SignUpPage from './containers/SignUpPage';
 import SignInPage from './containers/SignInPage'
 

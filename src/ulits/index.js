@@ -13,6 +13,22 @@ export const validateIdentity = (str1, str2) => str1 === str2;
 
 export const objToArray = (obj) => Object.keys(obj).map(key => obj[key]);
 
+export const getFirstLesson = ({ subject, progress }) => {
+  let targetLessonId,
+        detected = false;
+
+  debugger;
+
+  for (let lesson in progress) {
+    if (!(progress[lesson].completed) && !detected) {
+      targetLessonId = lesson;
+      detected = true;
+    }
+  }
+
+  return subject.lessons.find(lesson => lesson.id === targetLessonId);
+}
+
 export const createHTML = html => ({__html: html});
 
 export const getTotal = (obj) => {

@@ -12,7 +12,7 @@ import {
 } from '../../ulits';
 
 export class SignUpForm extends Component {
-   static propTypes = {
+  static propTypes = {
 
   };
 

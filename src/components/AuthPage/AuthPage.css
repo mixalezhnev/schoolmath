@@ -6,7 +6,6 @@
   bottom: 0;
   right: 0;
   left: 0;
-  min-height: 100%;
 }
 
 .wrapper {
@@ -139,9 +138,8 @@
   }
 }
 
-@media only sceern and (width > 1200px) {
-  .container {
-    background: url(./bg.png) no-repeat;
-    background-size: cover;
+@media only screen and (width > 1200px) {
+  .wrapper {
+    max-width: 420px;
   }
 }

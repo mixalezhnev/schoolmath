@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 import styles from './AuthPage.css';
 
-const AuthPage = ({children, location}) => {
+const AuthPage = ({children, location, loginGoogle}) => {
   const path = location.pathname.split('/')[2];
   return (
     <div className={styles.container}>
@@ -16,7 +16,7 @@ const AuthPage = ({children, location}) => {
           </h1>
         </header>
         <div className={styles.wrapperBody}>
-          <div className={styles.googleAuth}> </div>
+          <div className={styles.googleAuth} onClick={ loginGoogle }></div>
           <div className={styles.horizontalLine}>
             <span className={styles.horizontalText}>
               или
@@ -39,6 +39,8 @@ const AuthPage = ({children, location}) => {
   );
 }
 
-AuthPage.propTypes = {};
+AuthPage.propTypes = {
+  loginGoogle: PropTypes.func.isRequired
+};
 
 export default AuthPage;
