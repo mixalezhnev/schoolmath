@@ -12,7 +12,7 @@ const getProgressFailure = (e) => ({type: GET_PROGRESS_FAILURE, payload: e.messa
 
 export const listenToProgress = user => async dispatch => {
   try {
-    const ref = database.ref(`users/${user.uid}`);
+    const ref = database.ref(`users/${user.uid}/progress`);
     const snapshot = await ref.once('value');
     const data = snapshot.val();
 

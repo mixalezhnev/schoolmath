@@ -1,9 +1,9 @@
 .question {
-	composes: primary-font-size from '../../assets/typography.css';
+  composes: primary-font-size from '../../assets/typography.css';
 }
 
 @media only screen and (width > 768px) {
-	.question {
-		font-size: 22px;
-	}
+  .question {
+    font-size: 22px;
+  }
 }

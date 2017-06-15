@@ -1,0 +1,33 @@
+.input {
+  composes: inputs from '../../assets/general.css';
+  display: block;
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid #cacaca;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  color: #3b3b3b;
+  font-size: 1.2rem;
+  transition: all .1s ease-out;
+  -webkit-font-smoothing: antialiased;
+  &:focus {
+    border-color: transparent;
+    box-shadow: 0 0 10px #7AA7CF;
+  }
+  &::-webkit-input-placeholder {
+    color: #3b3b3b;
+    opacity: .55;;
+  }
+  &:focus::-webkit-input-placeholder {
+    opacity: .7;
+  }
+}
+
+.invalid {
+  composes: input;
+  border-color: red;
+  &:focus {
+    border-color: inherit;
+    box-shadow: none;
+  }
+}

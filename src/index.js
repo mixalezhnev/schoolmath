@@ -17,6 +17,10 @@ import SubjectPractice from './components/SubjectPractice';
 import SubjectOverview from './containers/SubjectOverview';
 import Lesson from './containers/Lesson';
 
+import AuthPage from './components/AuthPage';
+import SignUpPage from './containers/SignUpPage';
+import SignInPage from './containers/SignInPage'
+
 import './index.css';
 
 const store = configureStore();
@@ -40,7 +44,12 @@ render(
     <Router history={history}>
       <Redirect from='/' to='overview'/>
       <Redirect from='/subject/:subject' to='/subject/:subject/overview'/>
+     <Redirect from='/auth' to='auth/signin'/> 
       <Route path='/' component={App}>
+        <Route path='/auth' component={AuthPage}>
+          <Route path='/auth/signup' component={SignUpPage}/>
+          <Route path='/auth/signin' component={SignInPage}/>
+        </Route>
         <Route path='/overview' component={Home}>
           <IndexRoute component={OverviewPage}/>
           <Route path='/practice' component={PracticePage}/>

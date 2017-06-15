@@ -27,6 +27,7 @@
 
 .lesson {
   display: flex;
+  align-items: center;
   border-top: 1px solid color(gray a(15%));
   padding: 15px 0;
 }

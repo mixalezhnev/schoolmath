@@ -1,6 +1,8 @@
 .header {
-	composes: content-block-padding from '../../assets/layout.css';
-  background: #29ACE2;
+  composes: content-block-padding from '../../assets/layout.css';
+  /*background: #29ACE2;*/
+  background: white;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .transparent {
@@ -13,6 +15,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .right-block {
@@ -20,8 +24,17 @@
   align-items: center;
 }
 
+.auth {
+  margin-left: 10px;
+}
+
+.reversed {
+  composes: right-block;
+  flex-direction: row-reverse;
+}
+
 .search-box {
-	margin-right: 10px;
+  margin-left: 10px;
 }
 
 .logo {
@@ -34,11 +47,11 @@
   height: 100%;
 }
 
-@media only screen and (width => 320px) {
-	.logo {
-		height: 40px;
-		width: 40px;
-	}
+@media only screen and (width => 321px) {
+  .logo {
+    height: 40px;
+    width: 40px;
+  }
 }
 
 @media only screen and (width >= 768px) {

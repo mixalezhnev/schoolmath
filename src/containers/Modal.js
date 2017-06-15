@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { bindActionCreators } from 'redux';
 import { toggleModal, updateExercise, finishExercise } from '../store/actions/practice';
@@ -25,6 +26,10 @@ class Modal extends Component {
   state = {
     curExercise: null
   }
+
+  static propTypes = {
+    toggleModal: PropTypes.func.isRequired
+  };
 
   componentWillReceiveProps(nextProps) {
     const { exercises, completed } = nextProps.practice;

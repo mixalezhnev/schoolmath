@@ -1,35 +1,59 @@
 $sign-in-bg: #91DC5A;
 
 .profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 
+.user-icon {
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  background: url(./user.svg) no-repeat;
+  right: 0;
 }
 
 .profile-link {
-
+  composes: primary-font-family from '../../assets/typography.css';
+  color: color(black a(80%));
+  margin-right: 40px;
 }
 
 .sign-in {
 
 }
 
-.sign-in-link {
-	composes: links from '../../assets/general.css';
-	composes: primary-font-family from '../../assets/typography.css';
+.auth-group {
+  display: flex;
+  align-items: center;
+}
+
+.auth-elem {
+  composes: primary-font-family from '../../assets/typography.css';
   display: block;
-  padding: 5px 10px;
-  border: 2px solid $sign-in-bg;
-  border-radius: 10px;
-  color: $sign-in-bg;
+  line-height: 2.5;
+  font-size: 14px;
+  padding: 0 1.25em;
+  color: #ffae1c;
+}
+
+.create-account {
+  composes: auth-elem;
+  border: 2px solid #ffae1c;
+  border-radius: 20px;
   transition: all .1s ease-out;
+  &:hover {
+    color: white;
+    background: #ffae1c;
+  }
 }
 
-.sign-in-link:hover {
-  color: white;
-  background: $sign-in-bg;
-}
-
-.sign-in-link-alt {
-  composes: sign-in-link;
-  border-color: var(--subject-bg-color);
-  color: var(--subject-bg-color) !important;
+.sign-in-link {
+  composes: auth-elem;
+  margin-left: 5px;
+  transition: color .1s ease-out;
+  &:hover {
+    color: #6A6A6A;
+  }
 }

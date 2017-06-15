@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 
 import StateStar from '../../containers/StateStar';
 import styles from './Training.css';

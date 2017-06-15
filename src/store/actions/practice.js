@@ -7,7 +7,7 @@ import {
   UPDATE_EXERCISE_SUCCESS,
   UPDATE_EXERCISE_FAILURE,
   COMPLETE_LESSON_SUCCESS,
-	COMPLETE_LESSON_FAILURE,
+  COMPLETE_LESSON_FAILURE,
   SET_CORRECT,
   FINISH_EXERCISE
 } from '../constants/practice';
@@ -75,7 +75,7 @@ const updateExerciseFailure = e => ({
 export const updateExercise = ({ subject, lesson, id }) =>
   async dispatch =>  {
     try {
-      const ref = database.ref(`users/${auth.currentUser.uid}/${subject}/${lesson}/${id}`);
+      const ref = database.ref(`users/${auth.currentUser.uid}/progress/${subject}/${lesson}/${id}`);
 
       const update = {
         completed: true
@@ -103,7 +103,7 @@ export const completeLessonFailure = (e) => ({
 export const completeLesson = ({ lesson, subject }) =>
   async dispatch =>  {
     try {
-      const ref = database.ref(`users/${auth.currentUser.uid}/${subject}/${lesson}`);
+      const ref = database.ref(`users/${auth.currentUser.uid}/progress/${subject}/${lesson}`);
 
       const update = {
         completed: true

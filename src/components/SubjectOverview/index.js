@@ -6,15 +6,15 @@ import ContentList from '../ContentList';
 
 import styles from './SubjectOverview.css';
 
-const SubjectOverview = ({data, children, params}) => {
+const SubjectOverview = ({data, children, params,}) => {
 
-  const targetSubject =
-    data.length === 0 ? {
+  const targetSubject = data.length === 0
+    ? {
       description: '',
       title: '',
-      lessons: []
-    } :  data.find(subject =>
-      subject.id == params.subject);
+      lessons: [],
+    }
+    : data.find(subject => subject.id == params.subject);
 
   return (
     <div>
@@ -29,10 +29,7 @@ const SubjectOverview = ({data, children, params}) => {
       </div>
       <div className={styles.container}>
         <div className={styles.flex}>
-          <ContentList
-            data={targetSubject.lessons}
-            subjRoute={params.subject}
-          />
+          <ContentList data={targetSubject.lessons} subjRoute={params.subject}/>
           <div className={styles.desc}>
             <p className={styles.descText}>{targetSubject.description}</p>
           </div>
